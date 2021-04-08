@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5rY-iH-6pg">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tuf-jI-s7e">
-                                <rect key="frame" x="0.0" y="806" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="754" width="390" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -40,11 +40,11 @@
             <objects>
                 <viewController id="5rY-iH-6pg" customClass="ViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tIL-nQ-bGa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="803-fI-xhw">
-                                <rect key="frame" x="0.0" y="806" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="754" width="390" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -54,25 +54,54 @@
                                 </items>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p97-Lm-SBL">
-                                <rect key="frame" x="0.0" y="391" width="414" height="416"/>
+                                <rect key="frame" x="0.0" y="391" width="390" height="364"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="109" id="JSr-hi-xcy">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="109"/>
+                                        <rect key="frame" x="0.0" y="28" width="390" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JSr-hi-xcy" id="OZN-Zh-h9h">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="109"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bm9-my-SJz">
+                                <rect key="frame" x="20" y="357" width="107" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dna-M0-ikJ">
+                                <rect key="frame" x="319" y="357" width="65" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="3ME-il-ylR"/>
+                                    <constraint firstAttribute="height" constant="24" id="o1f-PU-rwb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4eV-As-hEH">
+                                <rect key="frame" x="333" y="72.333333333333314" width="37" height="35.666666666666671"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="AuR-Qg-aZV"/>
+                                    <constraint firstAttribute="height" constant="36" id="eVS-qQ-9Tg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="luw-pj-RTs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Bm9-my-SJz" firstAttribute="leading" secondItem="luw-pj-RTs" secondAttribute="leading" constant="20" id="3gI-uE-r64"/>
+                            <constraint firstItem="dna-M0-ikJ" firstAttribute="top" secondItem="luw-pj-RTs" secondAttribute="top" constant="313" id="3sc-QL-RCj"/>
+                            <constraint firstItem="p97-Lm-SBL" firstAttribute="top" secondItem="Bm9-my-SJz" secondAttribute="bottom" constant="10" id="85b-bG-BeC"/>
                             <constraint firstItem="p97-Lm-SBL" firstAttribute="top" secondItem="luw-pj-RTs" secondAttribute="top" constant="347" id="Faq-oc-aOt"/>
+                            <constraint firstItem="4eV-As-hEH" firstAttribute="top" secondItem="luw-pj-RTs" secondAttribute="top" constant="28" id="NpJ-AU-EcU"/>
+                            <constraint firstItem="luw-pj-RTs" firstAttribute="trailing" secondItem="4eV-As-hEH" secondAttribute="trailing" constant="20" id="Yst-FU-vef"/>
                             <constraint firstItem="p97-Lm-SBL" firstAttribute="leading" secondItem="luw-pj-RTs" secondAttribute="leading" id="dKA-6E-NUn"/>
+                            <constraint firstItem="luw-pj-RTs" firstAttribute="trailing" secondItem="dna-M0-ikJ" secondAttribute="trailing" constant="6" id="dao-QV-r6i"/>
                             <constraint firstItem="luw-pj-RTs" firstAttribute="bottom" secondItem="p97-Lm-SBL" secondAttribute="bottom" constant="55" id="t2Y-QE-U2H"/>
                             <constraint firstItem="p97-Lm-SBL" firstAttribute="trailing" secondItem="luw-pj-RTs" secondAttribute="trailing" id="vjr-ae-1Kd"/>
                         </constraints>
@@ -86,7 +115,11 @@
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="circle.dashed.inset.fill" catalog="system" width="128" height="121"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="mail.and.text.magnifyingglass" catalog="system" width="128" height="95"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
