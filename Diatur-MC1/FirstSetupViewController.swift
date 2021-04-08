@@ -7,27 +7,27 @@
 
 import UIKit
 
-let dataWorkHour = ["1", "24"]
+let dataWorkHour = ["1", "2","3","4","5","6","7","8","9","10","11","12"]
 
-class FirstSetupViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
+class FirstSetupViewController: UIViewController {
     @IBOutlet weak var pickerViewWorkHour: UIPickerView!
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataWorkHour.count
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerViewWorkHour.dataSource = self
         pickerViewWorkHour.delegate = self
     }
 }
-extension ViewController: UIPickerViewDelegate {
+
+extension FirstSetupViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dataWorkHour.count
+    }
+}
+
+extension FirstSetupViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataWorkHour[row]
     }
