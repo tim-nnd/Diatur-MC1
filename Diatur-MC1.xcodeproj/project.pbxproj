@@ -17,6 +17,7 @@
 		C02E2C79261DCC83007A302A /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C78261DCC83007A302A /* Ring.swift */; };
 		C02E2C7D261DD23B007A302A /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C7C261DD23B007A302A /* Setting.swift */; };
 		C0DB42F6261EE013009246F2 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB42F5261EE013009246F2 /* OverviewViewController.swift */; };
+		C0DB42FA261EE666009246F2 /* DetailedTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB42F9261EE666009246F2 /* DetailedTaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C02E2C78261DCC83007A302A /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		C02E2C7C261DD23B007A302A /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		C0DB42F5261EE013009246F2 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		C0DB42F9261EE666009246F2 /* DetailedTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,17 +76,26 @@
 		1C82714B261C62E5003A1B71 /* Diatur-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				C0DB42FC261EE675009246F2 /* Task */,
 				1C0C14A2261DCA0100B0EDCC /* Model */,
 				1C82714C261C62E5003A1B71 /* AppDelegate.swift */,
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
 				1C827150261C62E5003A1B71 /* ViewController.swift */,
-				C0DB42F5261EE013009246F2 /* OverviewViewController.swift */,
 				1C827152261C62E5003A1B71 /* Main.storyboard */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
 				1C827157261C62E6003A1B71 /* LaunchScreen.storyboard */,
 				1C82715A261C62E6003A1B71 /* Info.plist */,
 			);
 			path = "Diatur-MC1";
+			sourceTree = "<group>";
+		};
+		C0DB42FC261EE675009246F2 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C0DB42F9261EE666009246F2 /* DetailedTaskTableViewCell.swift */,
+				C0DB42F5261EE013009246F2 /* OverviewViewController.swift */,
+			);
+			path = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				C02E2C79261DCC83007A302A /* Ring.swift in Sources */,
 				C0DB42F6261EE013009246F2 /* OverviewViewController.swift in Sources */,
 				C02E2C7D261DD23B007A302A /* Setting.swift in Sources */,
+				C0DB42FA261EE666009246F2 /* DetailedTaskTableViewCell.swift in Sources */,
 				1C827151261C62E5003A1B71 /* ViewController.swift in Sources */,
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,

@@ -13,12 +13,18 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var ListTask: UITableView!
     @IBOutlet weak var todayListTitle: UILabel!
     
+    var cellID = "listCell"
+    
+    // Data dari Table View Cell
+    var taskName: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ListTask.delegate = self
         // Do any additional setup after loading the
-    
+        
     }
     
     @IBAction func addTask(_ sender: UIButton) {
@@ -41,4 +47,20 @@ class OverviewViewController: UIViewController {
     }
     */
 
+}
+
+extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        
+        return cell
+    }
+    
+    
 }
