@@ -76,8 +76,8 @@
 		1C82714B261C62E5003A1B71 /* Diatur-MC1 */ = {
 			isa = PBXGroup;
 			children = (
-				C0DB42FC261EE675009246F2 /* Task */,
 				1C0C14A2261DCA0100B0EDCC /* Model */,
+				C0DB42FC261EE675009246F2 /* Task */,
 				1C82714C261C62E5003A1B71 /* AppDelegate.swift */,
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
 				1C827150261C62E5003A1B71 /* ViewController.swift */,

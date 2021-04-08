@@ -14,7 +14,7 @@ class Task {
     var date: Date
     var notes: String
     
-    init(name: String, priority: Int, timeElapsed: TimeInterval, date: Date, notes: String) {
+    init(name: String, priority: Int, timeElapsed: TimeInterval, date: Date,  notes: String) {
         self.name = name
         self.priority = priority
         self.timeElapsed = timeElapsed
