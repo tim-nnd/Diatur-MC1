@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82714C261C62E5003A1B71 /* AppDelegate.swift */; };
 		1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82714E261C62E5003A1B71 /* SceneDelegate.swift */; };
-		1C827154261C62E5003A1B71 /* TaskDetailMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C827152261C62E5003A1B71 /* TaskDetailMain.storyboard */; };
+		1C827154261C62E5003A1B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C827152261C62E5003A1B71 /* Main.storyboard */; };
 		1C827156261C62E6003A1B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C827155261C62E6003A1B71 /* Assets.xcassets */; };
-		39367D42261DA03C00865D80 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39367D41261DA03C00865D80 /* TaskDetailViewController.swift */; };
+		3902A865261EDD1600B2CE76 /* TaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */; };
+		3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */; };
+		39367D42261DA03C00865D80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39367D41261DA03C00865D80 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C827149261C62E5003A1B71 /* Diatur-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diatur-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C82714C261C62E5003A1B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C82714E261C62E5003A1B71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C827153261C62E5003A1B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TaskDetailMain.storyboard; sourceTree = "<group>"; };
+		1C827153261C62E5003A1B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C827155261C62E6003A1B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C82715A261C62E6003A1B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39367D41261DA03C00865D80 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetail.storyboard; sourceTree = "<group>"; };
+		3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		39367D41261DA03C00865D80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				1C82714C261C62E5003A1B71 /* AppDelegate.swift */,
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
-				39367D41261DA03C00865D80 /* TaskDetailViewController.swift */,
-				1C827152261C62E5003A1B71 /* TaskDetailMain.storyboard */,
+				39367D41261DA03C00865D80 /* ViewController.swift */,
+				1C827152261C62E5003A1B71 /* Main.storyboard */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
 				1C82715A261C62E6003A1B71 /* Info.plist */,
+				3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */,
+				3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */,
 			);
 			path = "Diatur-MC1";
 			sourceTree = "<group>";
@@ -122,7 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C827156261C62E6003A1B71 /* Assets.xcassets in Resources */,
-				1C827154261C62E5003A1B71 /* TaskDetailMain.storyboard in Resources */,
+				3902A865261EDD1600B2CE76 /* TaskDetail.storyboard in Resources */,
+				1C827154261C62E5003A1B71 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
-				39367D42261DA03C00865D80 /* TaskDetailViewController.swift in Sources */,
+				39367D42261DA03C00865D80 /* ViewController.swift in Sources */,
+				3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,12 +150,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1C827152261C62E5003A1B71 /* TaskDetailMain.storyboard */ = {
+		1C827152261C62E5003A1B71 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1C827153261C62E5003A1B71 /* Base */,
 			);
-			name = TaskDetailMain.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

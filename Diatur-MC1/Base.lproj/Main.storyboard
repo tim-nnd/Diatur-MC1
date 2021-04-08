@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Task Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="TaskDetailViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <action selector="BtnTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jx4-MJ-GKP"/>
                                     <action selector="NavBackBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xrd-dk-kv8"/>
                                 </connections>
                             </button>
@@ -82,7 +81,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="StartBtn" destination="JlE-dg-jix" id="cc5-A5-S5V"/>
+                        <outlet property="dateTask" destination="UEG-dF-ERR" id="ayJ-re-28U"/>
+                        <outlet property="iconPriority" destination="82J-zU-X5s" id="kxd-w2-ft4"/>
+                        <outlet property="noteTask" destination="y7i-NP-HXe" id="nwL-Uf-bV8"/>
+                        <outlet property="priorityLevel" destination="8OE-ac-UpT" id="7Kf-BQ-mvf"/>
+                        <outlet property="taskName" destination="5tB-Rj-ph2" id="AVq-ft-s4X"/>
+                        <outletCollection property="starBtn" destination="JlE-dg-jix" collectionClass="NSMutableArray" id="iwu-gw-JD6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
