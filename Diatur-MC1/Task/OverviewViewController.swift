@@ -15,22 +15,19 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var todayListTitle: UILabel!
     
     var cellID = "listCell"
+    var sorted: [Task] = []
     
-    var sorted: [Any]?
     
-    // Data Dummy
+    // Reference dari Task.Swift
+    var arrayTask: [Task] = [
     
-    var arrayDataDummy: [dummyData] = [
-        dummyData(nameTask: "Ngoding Dulu ahaayy", priority: 0),
-        dummyData(nameTask: "Ahayy Ngoding braay", priority: 2),
-        dummyData(nameTask: "Lagi MC1.2 Brooww", priority: 1)
-        
+        Task.init(name: "Ngoding Dulu", priority: 0),
+        Task.init(name: "Ahayy Ngoding", priority: 2),
+        Task.init(name: "Lagi MC1.2 Brooow", priority: 1),
+        Task.init(name: "LAGI UTS NICH", priority: 1)
     ]
-    
-    
-        
-      
-    
+   
+ 
     var priorityLabel = ""
     var colorPriority: UIImage?
     
@@ -42,8 +39,9 @@ class OverviewViewController: UIViewController {
         // Do any additional setup after loading the
      
         // Sort array
-         sorted = arrayDataDummy.sorted(by: {$0.priority < $1.priority})
-        
+       sorted = arrayTask.sorted(by: {$0.priority < $1.priority})
+    
+       
         
     }
     
@@ -67,14 +65,9 @@ class OverviewViewController: UIViewController {
      }
      */
     
-    struct dummyData{
-        var nameTask : String
-        var priority: Int
-        
-    }
-    
-    
+ 
 }
+
 
 extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
@@ -82,17 +75,15 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         
        
             
-            return sorted!.count
+            return sorted.count
         }
     
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            
-            
-            
+             
             let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailedTaskTableViewCell
             
-            let dataDummy = arrayDataDummy[indexPath.row]
+            let dataDummy = sorted[indexPath.row]
             
             
             switch dataDummy.priority {
@@ -110,7 +101,7 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
                 priorityLabel = ""
             }
             
-            cell.taskName.text = dataDummy.nameTask
+            cell.taskName.text = dataDummy.name
             cell.priorityLabel.text = "Priority \(priorityLabel)"
             
             
