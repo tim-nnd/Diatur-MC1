@@ -21,6 +21,14 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet weak var stopwatch_Counter: UILabel!
     
+    @IBOutlet weak var breakBtn: UIButton!
+    
+    @IBOutlet weak var finishBtn: UIButton!
+    
+    @IBOutlet weak var workBtn: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,21 +43,27 @@ class TaskDetailViewController: UIViewController {
 //      Hiding a StartBtn, Showing stopwatch_Counter on startBtn Click
         ShowStopwatch()
         HideStartBtn()
+        ShowBreakBtn()
+        ShowFinishBtn()
     }
     
-    @IBAction func breakBtnOnTapped(_ sender: Any) {
-        
+    @IBAction func breakBtnOnTapped(_ sender: UIButton) {
+        ShowWorkBtn()
+        HideBreakBtn()
     }
     
     @IBAction func finishBtnOnTapped(_ sender: UIButton) {
+        
     }
     
     @IBAction func workBtnOnTapped(_ sender: UIButton) {
+        ShowBreakBtn()
+        HideWorkBtn()
     }
     
     
     func ShowStopwatch (){
-//        Showing stopwatch Label
+//      Showing stopwatch Label
         if (stopwatch_Counter.isHidden == true){
             stopwatch_Counter.isHidden = false
         
@@ -57,16 +71,54 @@ class TaskDetailViewController: UIViewController {
     }
     
     func HideStartBtn(){
-//        Hiding StartBtn
+//      hiding StartBtn
         if (startBtn.isHidden == false){
             startBtn.isHidden = true
         }
     }
     
+    func ShowBreakBtn(){
+//      showing breakBtn
+        if (breakBtn.isHidden == true){
+            breakBtn.isHidden = false
+        }
+    }
     
+    func HideBreakBtn(){
+//      hide breakBtn
+        if (breakBtn.isHidden == false){
+            breakBtn.isHidden = true
+        }
+    }
     
+    func ShowWorkBtn(){
+//      showing workBtn
+        if (workBtn.isHidden == true){
+            workBtn.isHidden = false
+        }
+    }
     
+    func HideWorkBtn(){
+//        hideWorkBtn
+        if (workBtn.isHidden == false) {
+            workBtn.isHidden = true
+        }
+    }
     
+    func ShowFinishBtn(){
+//        show finishBtn
+        if (finishBtn.isHidden == true){
+            finishBtn.isHidden = false
+        }
+    }
+    
+    func HideFinishBt() {
+//        hide finishBtn
+        if (finishBtn.isHidden == false){
+            
+        }
+        
+    }
     
     /*func LabelChange(){
         nameTask.text = "Ini nama Task"

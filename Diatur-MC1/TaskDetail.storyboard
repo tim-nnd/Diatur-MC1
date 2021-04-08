@@ -54,7 +54,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description of task" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KG-Av-4iL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description of task" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KG-Av-4iL">
                                 <rect key="frame" x="16" y="155" width="358" height="209"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -69,14 +69,14 @@
                                     <action selector="startBtnOnTapped:" destination="C7k-ak-WNN" eventType="touchUpInside" id="dDf-p9-z1B"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stopwatch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O8-bR-Wah">
-                                <rect key="frame" x="117" y="522" width="157" height="41"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O8-bR-Wah">
+                                <rect key="frame" x="135" y="522" width="120" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yve-36-lVJ" userLabel="BreakBtn">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yve-36-lVJ" userLabel="BreakBtn">
                                 <rect key="frame" x="37" y="639" width="71" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="BreakBtn"/>
@@ -84,7 +84,7 @@
                                     <action selector="breakBtnOnTapped:" destination="C7k-ak-WNN" eventType="touchUpInside" id="CK9-fW-pIK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Lj-rh-CtC" userLabel="FinishBtn">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Lj-rh-CtC" userLabel="FinishBtn">
                                 <rect key="frame" x="282" y="639" width="71" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="FinishBtn"/>
@@ -92,7 +92,7 @@
                                     <action selector="finishBtnOnTapped:" destination="C7k-ak-WNN" eventType="touchUpInside" id="v9I-LI-ECj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87B-qq-D97">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87B-qq-D97" userLabel="WorkButton">
                                 <rect key="frame" x="37" y="639" width="71" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="WorkBtn"/>
@@ -105,12 +105,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="breakBtn" destination="Yve-36-lVJ" id="eFn-Cj-Eu8"/>
                         <outlet property="dateTask" destination="tCo-nK-wPy" id="4lQ-h9-mDW"/>
+                        <outlet property="finishBtn" destination="5Lj-rh-CtC" id="H3w-vx-GfV"/>
                         <outlet property="nameTask" destination="Gth-0l-2Wx" id="Lx8-HW-eP0"/>
                         <outlet property="notesTask" destination="5KG-Av-4iL" id="dAO-3g-fEm"/>
                         <outlet property="priorityTask" destination="tCo-nK-wPy" id="kaK-bm-05O"/>
                         <outlet property="startBtn" destination="1aM-dZ-PZs" id="dNO-kq-5tl"/>
                         <outlet property="stopwatch_Counter" destination="8O8-bR-Wah" id="n2g-Rm-fAD"/>
+                        <outlet property="workBtn" destination="87B-qq-D97" id="cYn-uT-sh7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRu-dR-ei7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
