@@ -35,35 +35,47 @@ class OverviewViewController: UIViewController {
     
     // Circle
     let circle = CAShapeLayer()
+    let strokeCircle = CAShapeLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-      
-        
-        //Nanya ka octa atau kaben
+   
         let centre = CGPoint(x: circleView.frame.width/2, y: circleView.frame.height/2)
         
         let circlePath = UIBezierPath(arcCenter: centre , radius: 100, startAngle:  -CGFloat.pi / 2, endAngle: 2*CGFloat.pi, clockwise: true)
         
+        
+        // Stroke yang jadi "jalur"nya
+        strokeCircle.path = circlePath.cgPath
+        
+        
+        strokeCircle.fillColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        strokeCircle.strokeColor = #colorLiteral(red: 0.7998943329, green: 0.9216216803, blue: 0.976352036, alpha: 1)
+        
+        strokeCircle.lineWidth = 28
+        
+        circleView.layer.addSublayer(strokeCircle)
+        
+        //Stroke Fill
+      
         circle.path = circlePath.cgPath
         
         circle.fillColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-        circle.strokeColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        circle.strokeColor = #colorLiteral(red: 0.1566299498, green: 0.5098516345, blue: 0.976349175, alpha: 1)
         circleView.layer.addSublayer(circle)
-        
-        
-        
-        circle.lineWidth = 10.0
+
+        circle.lineWidth = 28
         circle.strokeEnd = 0
         
-    
+        circle.lineCap = .round
+        
+        //
        
+        // Do any additional setup after loading the
+        
         ListTask.delegate = self
         ListTask.dataSource = self
-        // Do any additional setup after loading the
-     
+        
         // Sort array
        sorted = arrayTask.sorted(by: {$0.priority < $1.priority})
    
