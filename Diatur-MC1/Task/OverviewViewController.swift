@@ -12,9 +12,9 @@ class OverviewViewController: UIViewController {
     
     @IBOutlet weak var ListTask: UITableView!
     @IBOutlet weak var circleView: UIView!
-    
-   
     @IBOutlet weak var todayListTitle: UILabel!
+    
+    @IBOutlet weak var labelWorkHour: UILabel!
     
     var cellID = "listCell"
     var sorted: [Task] = []
@@ -37,12 +37,17 @@ class OverviewViewController: UIViewController {
     let circle = CAShapeLayer()
     let strokeCircle = CAShapeLayer()
     
+    var labelWork = ""
+    
+    var position: Double = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
    
         let centre = CGPoint(x: circleView.frame.width/2, y: circleView.frame.height/2)
         
-        let circlePath = UIBezierPath(arcCenter: centre , radius: 100, startAngle:  -CGFloat.pi / 2, endAngle: 2*CGFloat.pi, clockwise: true)
+        let circlePath = UIBezierPath(arcCenter: centre , radius: 100, startAngle:  -CGFloat.pi / 2, endAngle: 1.5*CGFloat.pi, clockwise: true)
         
         
         // Stroke yang jadi "jalur"nya
@@ -70,6 +75,10 @@ class OverviewViewController: UIViewController {
         circle.lineCap = .round
         
         //
+        
+        //
+        
+       
        
         // Do any additional setup after loading the
         
@@ -81,24 +90,32 @@ class OverviewViewController: UIViewController {
    
         
     }
-    
+ 
     // Testing purposes
     @IBAction func userTap(_ sender: UIGestureRecognizer) {
         print("userTap")
         
         let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
         
-        animateCircle.toValue = 1
-        animateCircle.duration = 3
+        // Fillnya nambah, gak dari 0 lagi
+        position += 0.125
+        
+        
+        animateCircle.toValue = position
+        circle.strokeEnd = CGFloat(position)
+ 
+        animateCircle.duration = 1
+        
         
         //After Animation Complete, it Stays.
         animateCircle.fillMode = .forwards
         animateCircle.isRemovedOnCompletion = false
         
         circle.add(animateCircle, forKey: "Bebas")
+       
         
     }
-
+    
     @IBAction func addTask(_ sender: UIButton) {
         
         
