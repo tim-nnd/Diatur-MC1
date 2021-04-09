@@ -28,16 +28,11 @@
 		1CA41E15261EF8A900EF833D /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA41E14261EF8A900EF833D /* SummaryViewController.swift */; };
 		C02E2C79261DCC83007A302A /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C78261DCC83007A302A /* Ring.swift */; };
 		C02E2C7D261DD23B007A302A /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C7C261DD23B007A302A /* Setting.swift */; };
-
-		C0DB42F6261EE013009246F2 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB42F5261EE013009246F2 /* OverviewViewController.swift */; };
-		C0DB42FA261EE666009246F2 /* DetailedTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DB42F9261EE666009246F2 /* DetailedTaskTableViewCell.swift */; };
-
 		E0020EF9261DE15B00E0DBCA /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */; };
 		E0020F00261E417700E0DBCA /* NewTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020EFF261E417700E0DBCA /* NewTask.storyboard */; };
 		E0020F03261E451900E0DBCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020F02261E451900E0DBCA /* ViewController.swift */; };
 		E0020F07261ECB9100E0DBCA /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */; };
 		E0020F0A261EEA1200E0DBCA /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,14 +58,11 @@
 		1CA41E14261EF8A900EF833D /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		C02E2C78261DCC83007A302A /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		C02E2C7C261DD23B007A302A /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		C0DB42F5261EE013009246F2 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
-		C0DB42F9261EE666009246F2 /* DetailedTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaskTableViewCell.swift; sourceTree = "<group>"; };
 		E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
 		E0020EFF261E417700E0DBCA /* NewTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTask.storyboard; sourceTree = "<group>"; };
 		E0020F02261E451900E0DBCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
-    
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				1C0C14A2261DCA0100B0EDCC /* Model */,
-				C0DB42FC261EE675009246F2 /* Task */,
 				1C82714C261C62E5003A1B71 /* AppDelegate.swift */,
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
 				39367D41261DA03C00865D80 /* ViewController.swift */,
@@ -140,15 +131,6 @@
 			path = "Diatur-MC1";
 			sourceTree = "<group>";
 		};
-
-		C0DB42FC261EE675009246F2 /* Task */ = {
-			isa = PBXGroup;
-			children = (
-				C0DB42F9261EE666009246F2 /* DetailedTaskTableViewCell.swift */,
-				C0DB42F5261EE013009246F2 /* OverviewViewController.swift */,
-			);
-			path = Task;
-
 		1CA41E18261F0B7E00EF833D /* Summary */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +147,6 @@
 				1CA41E0E261EF30900EF833D /* ScheduleViewController.swift */,
 			);
 			path = Schedule;
-
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,9 +228,6 @@
 			files = (
 				1C0C14A4261DCA3800B0EDCC /* Task.swift in Sources */,
 				C02E2C79261DCC83007A302A /* Ring.swift in Sources */,
-				C0DB42F6261EE013009246F2 /* OverviewViewController.swift in Sources */,
-				C02E2C7D261DD23B007A302A /* Setting.swift in Sources */,
-				C0DB42FA261EE666009246F2 /* DetailedTaskTableViewCell.swift in Sources */,
 				ABABB78A262012E00001993C /* SettingDetailBreakViewController.swift in Sources */,
 				C02E2C7D261DD23B007A302A /* Setting.swift in Sources */,
 				AB316A09261F07EE00433D26 /* FirstSetupBreakViewController.swift in Sources */,
