@@ -7,7 +7,7 @@
 
 import UIKit
 
-let arrayDataBreakMinute = ["5","10","15","20"]
+let arrayDataBreakMinute = ["5","10","15"]
 let arrayDataWorkMinute = ["15", "30","45","60"]
 
 class FirstSetupBreakViewController: UIViewController {

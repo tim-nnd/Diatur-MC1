@@ -12,6 +12,8 @@ let arrayDataWorkHourSetting = ["1", "2","3","4","5","6","7","8","9","10","11","
 class SettingDetailViewController: UIViewController {
 
     @IBOutlet weak var pickerViewWorkHourSetting: UIPickerView!
+    @IBOutlet weak var navigationBarSettings: UINavigationBar!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
