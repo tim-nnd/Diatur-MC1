@@ -1,41 +1,21 @@
 //
-//  TaskDetailViewController.swift
+//  ScheduleViewController.swift
 //  Diatur-MC1
 //
-//  Created by Daffa Satria on 07/04/21.
+//  Created by Timothy Ananda on 08/04/21.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ScheduleViewController: UIViewController {
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view.
-        
-    }
 
-    
-    
-    @IBAction func NavBackBtn(_ sender: UIButton) {
-        
+        // Do any additional setup after loading the view.
     }
     
-    @IBAction func startBtn(_ sender:UIImageView){
-        
-    }
-    
-    
-   
-    
-    
-    
-    
-    
+
     /*
     // MARK: - Navigation
 
