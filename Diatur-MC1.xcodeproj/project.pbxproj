@@ -10,9 +10,11 @@
 		1C0C14A4261DCA3800B0EDCC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0C14A3261DCA3800B0EDCC /* Task.swift */; };
 		1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82714C261C62E5003A1B71 /* AppDelegate.swift */; };
 		1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82714E261C62E5003A1B71 /* SceneDelegate.swift */; };
-		1C827151261C62E5003A1B71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C827150261C62E5003A1B71 /* ViewController.swift */; };
 		1C827154261C62E5003A1B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C827152261C62E5003A1B71 /* Main.storyboard */; };
 		1C827156261C62E6003A1B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C827155261C62E6003A1B71 /* Assets.xcassets */; };
+		3902A865261EDD1600B2CE76 /* TaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */; };
+		3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */; };
+		39367D42261DA03C00865D80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39367D41261DA03C00865D80 /* ViewController.swift */; };
 		1C827159261C62E6003A1B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C827157261C62E6003A1B71 /* LaunchScreen.storyboard */; };
 		AB316A09261F07EE00433D26 /* FirstSetupBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */; };
 		ABABB78126200D110001993C /* SettingDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABABB78026200D110001993C /* SettingDetail.storyboard */; };
@@ -33,11 +35,12 @@
 		1C827149261C62E5003A1B71 /* Diatur-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diatur-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C82714C261C62E5003A1B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C82714E261C62E5003A1B71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1C827150261C62E5003A1B71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1C827153261C62E5003A1B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C827155261C62E6003A1B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C827158261C62E6003A1B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C82715A261C62E6003A1B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetail.storyboard; sourceTree = "<group>"; };
+		3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		39367D41261DA03C00865D80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSetupBreakViewController.swift; sourceTree = "<group>"; };
 		ABABB78026200D110001993C /* SettingDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingDetail.storyboard; sourceTree = "<group>"; };
 		ABABB7842620110C0001993C /* SettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +98,7 @@
 				1C0C14A2261DCA0100B0EDCC /* Model */,
 				1C82714C261C62E5003A1B71 /* AppDelegate.swift */,
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
-				1C827150261C62E5003A1B71 /* ViewController.swift */,
+				39367D41261DA03C00865D80 /* ViewController.swift */,
 				1C827152261C62E5003A1B71 /* Main.storyboard */,
 				ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */,
 				ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */,
@@ -104,8 +107,9 @@
 				ABABB7842620110C0001993C /* SettingDetailViewController.swift */,
 				ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
-				1C827157261C62E6003A1B71 /* LaunchScreen.storyboard */,
 				1C82715A261C62E6003A1B71 /* Info.plist */,
+				3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */,
+				3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */,
 				1CA41E1A261F194300EF833D /* Schedule */,
 				1CA41E18261F0B7E00EF833D /* Summary */,
 			);
@@ -191,6 +195,7 @@
 				ABABB78126200D110001993C /* SettingDetail.storyboard in Resources */,
 				ABFBE675261ED61F00AF4E57 /* FirstSetup.storyboard in Resources */,
 				1C827156261C62E6003A1B71 /* Assets.xcassets in Resources */,
+				3902A865261EDD1600B2CE76 /* TaskDetail.storyboard in Resources */,
 				1C827154261C62E5003A1B71 /* Main.storyboard in Resources */,
 				1CA41E0C261EEAD600EF833D /* Schedule.storyboard in Resources */,
 				1CA41E12261EF7A300EF833D /* Summary.storyboard in Resources */,
@@ -213,6 +218,8 @@
 				1C827151261C62E5003A1B71 /* ViewController.swift in Sources */,
 				ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */,
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
+				39367D42261DA03C00865D80 /* ViewController.swift in Sources */,
+				3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,
 				1CA41E0F261EF30900EF833D /* ScheduleViewController.swift in Sources */,
 				1CA41E15261EF8A900EF833D /* SummaryViewController.swift in Sources */,
@@ -228,14 +235,6 @@
 				1C827153261C62E5003A1B71 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1C827157261C62E6003A1B71 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C827158261C62E6003A1B71 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -371,7 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DoaIbu.Diatur-MC1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -389,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "DoaIbu.Diatur-MC1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
