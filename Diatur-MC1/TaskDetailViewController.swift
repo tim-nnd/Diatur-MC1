@@ -53,6 +53,15 @@ class TaskDetailViewController: UIViewController {
     }
     
     @IBAction func finishBtnOnTapped(_ sender: UIButton) {
+        //confirmation finish
+        let alert = UIAlertController (title: "Finish Task Confirmation", message: "are you sure you want to finish current task?", preferredStyle: .alert)
+        //finish Timer
+        alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: {(_)in
+            
+            //do nothing
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
         
     }
     
@@ -119,7 +128,36 @@ class TaskDetailViewController: UIViewController {
         }
         
     }
+//
+//  Stopwatch
+//  counting up timer
+//
     
+    
+    var timerUp: Timer = Timer()
+    var count: Int = 0
+    var countStatus:Bool = false
+
+    
+    func timerFinish() {
+        if (countStatus == true)
+        {
+            countStatus = false
+            timerUp.invalidate()
+            HideBreakBtn()
+            HideWorkBtn()
+    }
+    func timerOn(){
+        if (countStatus == false)
+        {
+            countStatus = true
+            ShowBreakBtn()
+            
+        }
+        
+    }
+        
+    }
     /*func LabelChange(){
         nameTask.text = "Ini nama Task"
         priorityTask.text = "Medium Priority"
@@ -139,4 +177,5 @@ class TaskDetailViewController: UIViewController {
     }
     */
 
-}
+
+    }
