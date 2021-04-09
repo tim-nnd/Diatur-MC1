@@ -61,6 +61,12 @@ class TaskDetailViewController: UIViewController {
             //do nothing
         }))
         
+        alert.addAction(UIAlertAction(title: "YES", style: .default, handler: {(_)in
+            
+            
+            
+        }))
+        
         self.present(alert, animated: true, completion: nil)
         
     }
@@ -130,7 +136,7 @@ class TaskDetailViewController: UIViewController {
     }
 //
 //  Stopwatch
-//  counting up timer
+//  [counting up timer]
 //
     
     
@@ -144,6 +150,7 @@ class TaskDetailViewController: UIViewController {
         {
             countStatus = false
             timerUp.invalidate()
+            
             HideBreakBtn()
             HideWorkBtn()
     }
@@ -151,12 +158,20 @@ class TaskDetailViewController: UIViewController {
         if (countStatus == false)
         {
             countStatus = true
-            ShowBreakBtn()
-            
+            //timerUp = Timer.scheduledTimer(timeInterval: 1, target: self, selector: timerCounter(), userInfo: nil, repeats: true)
         }
         
     }
+    
+        func timerCounter() -> Void
+        {
+            count = count + 1
+        }
         
+        func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int)
+        {
+            return ((seconds / 3600), ((seconds % 3600)/60),((seconds % 3600) % 60))
+        }
     }
     /*func LabelChange(){
         nameTask.text = "Ini nama Task"
