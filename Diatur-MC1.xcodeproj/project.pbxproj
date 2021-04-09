@@ -14,6 +14,12 @@
 		1C827154261C62E5003A1B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C827152261C62E5003A1B71 /* Main.storyboard */; };
 		1C827156261C62E6003A1B71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C827155261C62E6003A1B71 /* Assets.xcassets */; };
 		1C827159261C62E6003A1B71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C827157261C62E6003A1B71 /* LaunchScreen.storyboard */; };
+		AB316A09261F07EE00433D26 /* FirstSetupBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */; };
+		ABABB78126200D110001993C /* SettingDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABABB78026200D110001993C /* SettingDetail.storyboard */; };
+		ABABB7852620110C0001993C /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABB7842620110C0001993C /* SettingDetailViewController.swift */; };
+		ABABB78A262012E00001993C /* SettingDetailBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */; };
+		ABFBE675261ED61F00AF4E57 /* FirstSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */; };
+		ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */; };
 		1CA41E0C261EEAD600EF833D /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA41E0B261EEAD600EF833D /* Schedule.storyboard */; };
 		1CA41E0F261EF30900EF833D /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA41E0E261EF30900EF833D /* ScheduleViewController.swift */; };
 		1CA41E12261EF7A300EF833D /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA41E11261EF7A300EF833D /* Summary.storyboard */; };
@@ -32,6 +38,12 @@
 		1C827155261C62E6003A1B71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C827158261C62E6003A1B71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C82715A261C62E6003A1B71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSetupBreakViewController.swift; sourceTree = "<group>"; };
+		ABABB78026200D110001993C /* SettingDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingDetail.storyboard; sourceTree = "<group>"; };
+		ABABB7842620110C0001993C /* SettingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailViewController.swift; sourceTree = "<group>"; };
+		ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailBreakViewController.swift; sourceTree = "<group>"; };
+		ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstSetup.storyboard; sourceTree = "<group>"; };
+		ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSetupViewController.swift; sourceTree = "<group>"; };
 		1CA41E0B261EEAD600EF833D /* Schedule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		1CA41E0E261EF30900EF833D /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		1CA41E11261EF7A300EF833D /* Summary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
@@ -85,6 +97,12 @@
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
 				1C827150261C62E5003A1B71 /* ViewController.swift */,
 				1C827152261C62E5003A1B71 /* Main.storyboard */,
+				ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */,
+				ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */,
+				AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */,
+				ABABB78026200D110001993C /* SettingDetail.storyboard */,
+				ABABB7842620110C0001993C /* SettingDetailViewController.swift */,
+				ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
 				1C827157261C62E6003A1B71 /* LaunchScreen.storyboard */,
 				1C82715A261C62E6003A1B71 /* Info.plist */,
@@ -170,6 +188,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C827159261C62E6003A1B71 /* LaunchScreen.storyboard in Resources */,
+				ABABB78126200D110001993C /* SettingDetail.storyboard in Resources */,
+				ABFBE675261ED61F00AF4E57 /* FirstSetup.storyboard in Resources */,
 				1C827156261C62E6003A1B71 /* Assets.xcassets in Resources */,
 				1C827154261C62E5003A1B71 /* Main.storyboard in Resources */,
 				1CA41E0C261EEAD600EF833D /* Schedule.storyboard in Resources */,
@@ -186,8 +206,12 @@
 			files = (
 				1C0C14A4261DCA3800B0EDCC /* Task.swift in Sources */,
 				C02E2C79261DCC83007A302A /* Ring.swift in Sources */,
+				ABABB78A262012E00001993C /* SettingDetailBreakViewController.swift in Sources */,
 				C02E2C7D261DD23B007A302A /* Setting.swift in Sources */,
+				AB316A09261F07EE00433D26 /* FirstSetupBreakViewController.swift in Sources */,
+				ABABB7852620110C0001993C /* SettingDetailViewController.swift in Sources */,
 				1C827151261C62E5003A1B71 /* ViewController.swift in Sources */,
+				ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */,
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,
 				1CA41E0F261EF30900EF833D /* ScheduleViewController.swift in Sources */,
