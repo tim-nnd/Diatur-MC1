@@ -28,6 +28,8 @@ class OverviewViewController: UIViewController {
         Task.init(name: "Lagi MC1.2 Brooow", priority: 1),
         Task.init(name: "LAGI UTS NICH", priority: 1)
     ]
+    
+    var testingBaru = "Test Coding bareng Azka"
    
  
     var priorityLabel = ""
