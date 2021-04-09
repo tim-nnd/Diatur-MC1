@@ -11,7 +11,9 @@ class OverviewViewController: UIViewController {
     
     
     @IBOutlet weak var ListTask: UITableView!
+    @IBOutlet weak var circleView: UIView!
     
+   
     @IBOutlet weak var todayListTitle: UILabel!
     
     var cellID = "listCell"
@@ -31,19 +33,61 @@ class OverviewViewController: UIViewController {
     var priorityLabel = ""
     var colorPriority: UIImage?
     
+    // Circle
+    let circle = CAShapeLayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+      
+        
+        //Nanya ka octa atau kaben
+        let centre = CGPoint(x: circleView.frame.width/2, y: circleView.frame.height/2)
+        
+        let circlePath = UIBezierPath(arcCenter: centre , radius: 100, startAngle:  -CGFloat.pi / 2, endAngle: 2*CGFloat.pi, clockwise: true)
+        
+        circle.path = circlePath.cgPath
+        
+        circle.fillColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        circle.strokeColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+        circleView.layer.addSublayer(circle)
+        
+        
+        
+        circle.lineWidth = 10.0
+        circle.strokeEnd = 0
+        
+    
+       
         ListTask.delegate = self
         ListTask.dataSource = self
         // Do any additional setup after loading the
      
         // Sort array
        sorted = arrayTask.sorted(by: {$0.priority < $1.priority})
-    
-       
+   
         
     }
+    
+    // Testing purposes
+    @IBAction func userTap(_ sender: UIGestureRecognizer) {
+        print("userTap")
+        
+        let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
+        
+        animateCircle.toValue = 1
+        animateCircle.duration = 3
+        
+        //After Animation Complete, it Stays.
+        animateCircle.fillMode = .forwards
+        animateCircle.isRemovedOnCompletion = false
+        
+        circle.add(animateCircle, forKey: "Bebas")
+        
+    }
+    
+    
     
     @IBAction func addTask(_ sender: UIButton) {
         
@@ -72,9 +116,7 @@ class OverviewViewController: UIViewController {
 extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
        
-            
             return sorted.count
         }
     
