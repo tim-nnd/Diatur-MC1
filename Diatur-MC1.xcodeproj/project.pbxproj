@@ -27,6 +27,7 @@
 		ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */; };
 		C02E2C79261DCC83007A302A /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C78261DCC83007A302A /* Ring.swift */; };
 		C02E2C7D261DD23B007A302A /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C7C261DD23B007A302A /* Setting.swift */; };
+		C065B7422620A22E004A9121 /* TestingGithubGakStashedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C065B7412620A22E004A9121 /* TestingGithubGakStashedViewController.swift */; };
 		E0020EF9261DE15B00E0DBCA /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */; };
 		E0020F00261E417700E0DBCA /* NewTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020EFF261E417700E0DBCA /* NewTask.storyboard */; };
 		E0020F07261ECB9100E0DBCA /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */; };
@@ -59,6 +60,7 @@
 		ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSetupViewController.swift; sourceTree = "<group>"; };
 		C02E2C78261DCC83007A302A /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		C02E2C7C261DD23B007A302A /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		C065B7412620A22E004A9121 /* TestingGithubGakStashedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingGithubGakStashedViewController.swift; sourceTree = "<group>"; };
 		E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
 		E0020EFF261E417700E0DBCA /* NewTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTask.storyboard; sourceTree = "<group>"; };
 		E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */,
 				E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */,
 				E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */,
+				C065B7412620A22E004A9121 /* TestingGithubGakStashedViewController.swift */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
 				1C82715A261C62E6003A1B71 /* Info.plist */,
 				3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */,
@@ -252,6 +255,7 @@
 				ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */,
 				E0020EF9261DE15B00E0DBCA /* NewTaskVC.swift in Sources */,
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
+				C065B7422620A22E004A9121 /* TestingGithubGakStashedViewController.swift in Sources */,
 				3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */,
 				E0020F0A261EEA1200E0DBCA /* OnboardingVC.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,
