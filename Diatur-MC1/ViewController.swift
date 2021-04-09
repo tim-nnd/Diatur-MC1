@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import HealthKit
 
 class ViewController: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("hi")
+        print("Azka was here")
+        print("Hello Tim")
     }
 
     
