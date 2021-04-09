@@ -1,41 +1,21 @@
 //
-//  TaskDetailViewController.swift
+//  ViewController.swift
 //  Diatur-MC1
 //
-//  Created by Dian Dinihari on 08/04/21.
+//  Created by Dian Dinihari on 09/04/21.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //
     }
     
 
-    
-    
-    @IBAction func NavBackBtn(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func startBtn(_ sender:UIImageView){
-        
-    }
-    
-    
-   
-    
-    
-    
-    
-    
     /*
     // MARK: - Navigation
 

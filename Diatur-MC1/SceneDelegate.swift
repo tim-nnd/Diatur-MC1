@@ -13,32 +13,47 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        
-        let taskDetailStoryboard = UIStoryboard.init(name: "TaskDetail", bundle: nil)
-        
-        let taskDetailVC = taskDetailStoryboard.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
-        
-        self.window?.rootViewController = taskDetailVC
-        self.window?.makeKeyAndVisible()
-        
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        //****FOR FIRST SETUP***
+        // **** For Home Page *****
+        
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let mainOverviewVC = mainStoryboard.instantiateViewController(withIdentifier: "OverviewVC") as! OverviewViewController
+        self.window?.rootViewController = mainOverviewVC
+        self.window?.makeKeyAndVisible()
+        
+        // ******************
+        
+        // *****FOR TASK DETAIL******
+        /*
+        let taskDetailStoryboard = UIStoryboard.init(name: "TaskDetail", bundle: nil)
+        let taskDetailVC = taskDetailStoryboard.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
+        self.window?.rootViewController = taskDetailVC
+        self.window?.makeKeyAndVisible()
+        */
+        // ***************
+        
+ 
+        
+        // ****FOR FIRST SETUP***
+        /*
         let firstSetupStoryBoard = UIStoryboard.init(name: "FirstSetup", bundle: nil)
         let firstSetupViewController = firstSetupStoryBoard.instantiateViewController(withIdentifier: "firstSetupWork") as! FirstSetupViewController
         self.window?.rootViewController = firstSetupViewController
         self.window?.makeKeyAndVisible()
-        //****
+        */
+        // ****
         
-        //****FOR SETTING DETAIL***
-        //let settingDetailStoryBoard = UIStoryboard.init(name: "SettingDetail", bundle: nil)
-        //let settingDetailViewController = settingDetailStoryBoard.instantiateViewController(withIdentifier: "settingDetailWork") as! SettingDetailViewController
-        //self.window?.rootViewController = settingDetailViewController
-        //self.window?.makeKeyAndVisible()
-        //****
+        // ****FOR SETTING DETAIL***
+        /*
+        let settingDetailStoryBoard = UIStoryboard.init(name: "SettingDetail", bundle: nil)
+        let settingDetailViewController = settingDetailStoryBoard.instantiateViewController(withIdentifier: "settingDetailWork") as! SettingDetailViewController
+        self.window?.rootViewController = settingDetailViewController
+        self.window?.makeKeyAndVisible()
+        */
+        // ****
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
