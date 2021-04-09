@@ -15,6 +15,8 @@
 		E0020EF9261DE15B00E0DBCA /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */; };
 		E0020F00261E417700E0DBCA /* NewTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020EFF261E417700E0DBCA /* NewTask.storyboard */; };
 		E0020F03261E451900E0DBCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020F02261E451900E0DBCA /* ViewController.swift */; };
+		E0020F07261ECB9100E0DBCA /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */; };
+		E0020F0A261EEA1200E0DBCA /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
 		E0020EFF261E417700E0DBCA /* NewTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTask.storyboard; sourceTree = "<group>"; };
 		E0020F02261E451900E0DBCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
+		E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				E0020F02261E451900E0DBCA /* ViewController.swift */,
 				E0020EFF261E417700E0DBCA /* NewTask.storyboard */,
 				E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */,
+				E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */,
+				E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
 				1C827157261C62E6003A1B71 /* LaunchScreen.storyboard */,
 				1C82715A261C62E6003A1B71 /* Info.plist */,
@@ -134,6 +140,7 @@
 				1C827156261C62E6003A1B71 /* Assets.xcassets in Resources */,
 				E0020F00261E417700E0DBCA /* NewTask.storyboard in Resources */,
 				1C827154261C62E5003A1B71 /* Main.storyboard in Resources */,
+				E0020F07261ECB9100E0DBCA /* OnBoarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +153,7 @@
 			files = (
 				E0020EF9261DE15B00E0DBCA /* NewTaskVC.swift in Sources */,
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
+				E0020F0A261EEA1200E0DBCA /* OnboardingVC.swift in Sources */,
 				E0020F03261E451900E0DBCA /* ViewController.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,
 			);

@@ -24,7 +24,6 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         self.priority.dataSource = self
         
         /* Call this to edit the task */
-        
         // editData()
     }
     
@@ -63,7 +62,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         dateFormatter.dateStyle = DateFormatter.Style.long
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let strDate = dateFormatter.string(from: datePicker.date)
+        _ = dateFormatter.string(from: datePicker.date)
     }
     
     func editData() {
@@ -78,7 +77,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         
         note.text = noteData
         taskName.text = taskNameData
-        priority.selectRow(priorityData, inComponent: 0, animated: true)
+        priority.selectRow(priorityData, inComponent: 1, animated: true)
         datePicker.date = dateObj!
         navBar.title = "Edit"
     }
