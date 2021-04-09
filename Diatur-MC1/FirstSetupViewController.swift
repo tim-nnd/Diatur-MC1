@@ -7,10 +7,12 @@
 
 import UIKit
 
-let dataWorkHour = ["1", "2","3","4","5","6","7","8","9","10","11","12"]
+let arrayDataWorkHour = ["1", "2","3","4","5","6","7","8","9","10","11","12"]
 
 class FirstSetupViewController: UIViewController {
     @IBOutlet weak var pickerViewWorkHour: UIPickerView!
+    @IBOutlet weak var nextButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerViewWorkHour.dataSource = self
@@ -23,12 +25,12 @@ extension FirstSetupViewController: UIPickerViewDataSource {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return dataWorkHour.count
+        return arrayDataWorkHour.count
     }
 }
 
 extension FirstSetupViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return dataWorkHour[row]
+        return arrayDataWorkHour[row]
     }
 }

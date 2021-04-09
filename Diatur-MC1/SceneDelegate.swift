@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         let firstSetupStoryBoard = UIStoryboard.init(name: "FirstSetup", bundle: nil)
         
-        let firstSetupViewController = firstSetupStoryBoard.instantiateViewController(withIdentifier: "firstSetup") as! FirstSetupViewController
+        let firstSetupViewController = firstSetupStoryBoard.instantiateViewController(withIdentifier: "firstSetupWork") as! FirstSetupViewController
         self.window?.rootViewController = firstSetupViewController
         self.window?.makeKeyAndVisible()
         
