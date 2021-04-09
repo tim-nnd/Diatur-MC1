@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import HealthKit
 
 class ViewController: UIViewController {
 
@@ -16,8 +15,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("Azka was here")
-        print("Hello Tim")
     }
 
     
