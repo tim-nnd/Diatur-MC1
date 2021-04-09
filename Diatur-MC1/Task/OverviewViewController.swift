@@ -49,7 +49,7 @@ class OverviewViewController: UIViewController {
         strokeCircle.path = circlePath.cgPath
         
         
-        strokeCircle.fillColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        strokeCircle.fillColor = UIColor.clear.cgColor
         strokeCircle.strokeColor = #colorLiteral(red: 0.7998943329, green: 0.9216216803, blue: 0.976352036, alpha: 1)
         
         strokeCircle.lineWidth = 28
@@ -60,7 +60,7 @@ class OverviewViewController: UIViewController {
       
         circle.path = circlePath.cgPath
         
-        circle.fillColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+        circle.fillColor = UIColor.clear.cgColor
         circle.strokeColor = #colorLiteral(red: 0.1566299498, green: 0.5098516345, blue: 0.976349175, alpha: 1)
         circleView.layer.addSublayer(circle)
 
@@ -98,9 +98,7 @@ class OverviewViewController: UIViewController {
         circle.add(animateCircle, forKey: "Bebas")
         
     }
-    
-    
-    
+
     @IBAction func addTask(_ sender: UIButton) {
         
         
