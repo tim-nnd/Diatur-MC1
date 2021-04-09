@@ -10,8 +10,8 @@ import UIKit
 let arrayDataWorkHour = ["1", "2","3","4","5","6","7","8","9","10","11","12"]
 
 class FirstSetupViewController: UIViewController {
-    @IBOutlet weak var pickerViewWorkHour: UIPickerView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var pickerViewWorkHour: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -48,10 +48,6 @@
                                     <outletCollection property="gestureRecognizers" destination="zXY-bA-RIq" appends="YES" id="eHb-Lf-zDe"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="8C1-vE-vB9">
-                                <rect key="frame" x="146" y="773" width="123" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tka-x4-khM">
                                 <rect key="frame" x="174" y="462" width="46" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -81,16 +77,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="edj-Xf-bbe" id="Et2-VO-DNk"/>
-                        <outlet property="pickerViewWorkHour" destination="EOh-rU-Q0b" id="DOa-ks-CvX"/>
+                        <outlet property="nextButton" destination="edj-Xf-bbe" id="VaC-Ym-2KX"/>
+                        <outlet property="pickerViewWorkHour" destination="EOh-rU-Q0b" id="g7V-ba-7kV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zed-1k-xHY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="zXY-bA-RIq">
-                    <connections>
-                        <segue destination="w48-yy-HIj" kind="presentation" id="Xpy-cY-7wb"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zXY-bA-RIq"/>
             </objects>
             <point key="canvasLocation" x="-333.84615384615381" y="150.71090047393363"/>
         </scene>
@@ -99,7 +91,7 @@
             <objects>
                 <viewController storyboardIdentifier="firstSetupBreak" useStoryboardIdentifierAsRestorationIdentifier="YES" id="w48-yy-HIj" customClass="FirstSetupBreakViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ULf-hp-ObL">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Taking break can  boost your mood!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXK-CZ-67F">
@@ -183,6 +175,7 @@
                         <viewLayoutGuide key="safeArea" id="CTv-h5-XMU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="VUC-d4-Rfh"/>
                     <connections>
                         <outlet property="nextButtonBreak" destination="hAo-4I-q2C" id="W02-EJ-bxs"/>
                         <outlet property="pickerViewBreakMinute" destination="GDA-QT-Vci" id="Ae3-fb-RlQ"/>
