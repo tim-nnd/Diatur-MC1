@@ -189,6 +189,7 @@
                         <outlet property="circleView" destination="hCt-oE-uT6" id="GUy-CB-hyi"/>
                         <outlet property="labelWorkHour" destination="sgL-Al-pH5" id="RuK-Gt-rHX"/>
                         <outlet property="todayListTitle" destination="Bm9-my-SJz" id="MQQ-fd-CCe"/>
+                        <segue destination="5Im-R7-rwQ" kind="presentation" identifier="addToAdd" id="Wqb-2S-2Cx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1C-M4-Qlj" sceneMemberID="firstResponder"/>
@@ -199,6 +200,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="860" y="80"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="wZK-8B-HPL">
+            <objects>
+                <viewControllerPlaceholder id="5Im-R7-rwQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mIp-O7-Xpx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1536" y="80"/>
         </scene>
     </scenes>
     <resources>
