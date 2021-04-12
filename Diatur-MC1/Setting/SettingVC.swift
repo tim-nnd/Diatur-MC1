@@ -28,7 +28,22 @@ class SettingVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    func prepareForSegue(segue: UIStoryboardSegue, sender: Any){
+        if segue.identifier == "settingDetailWork" {
+            if let vc = storyboard?.instantiateViewController(withIdentifier : "settingDetailWork") as? SettingDetailViewController {
+                navigationController?.pushViewController(vc, animated : true)
+            }
+        }
+        else if segue.identifier == "firstSetupBreak" {
+            if let vc = storyboard?.instantiateViewController(withIdentifier : "firstSetupBreak") as? SettingDetailBreakViewController {
+                navigationController?.pushViewController(vc, animated : true)
+            }
+        }
+    }
+    
 }
+
+
 
 extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -51,18 +66,28 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+            
         switch indexPath.row {
         case 0:
-            identifier:"settingDetailWork";
+            //performSegue(withIdentifier: "settingDetailWork", sender: self)
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier : "settingDetailWork") as? SettingDetailViewController {
+                self.navigationController?.pushViewController(vc, animated : true)
+            }
+
+            break;
         case 1:
-            identifier:"firstSetupBreak";
+            //performSegue(withIdentifier: "firstSetupBreak", sender: self)
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier : "firstSetupBreak") as? SettingDetailBreakViewController {
+                self.navigationController?.pushViewController(vc, animated : true)
+            }
+            
+            break;
         default:
             break;
-            
         }
-        
     }
     
     
+    
 }
+    
