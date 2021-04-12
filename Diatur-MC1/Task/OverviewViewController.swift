@@ -126,7 +126,7 @@ class OverviewViewController: UIViewController {
 
     @IBAction func addTask(_ sender: UIButton) {
         
-        
+        performSegue(withIdentifier: "addToAdd", sender: self)
         
     }
     
