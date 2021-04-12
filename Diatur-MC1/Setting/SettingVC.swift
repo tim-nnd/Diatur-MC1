@@ -46,5 +46,19 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.row {
+        case 0:
+            identifier:"settingDetailWork";
+        case 1:
+            identifier:"firstSetupBreak";
+        default:
+            break;
+            
+        }
+        
+    }
+    
     
 }

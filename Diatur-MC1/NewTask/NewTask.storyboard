@@ -99,11 +99,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="datePicker" destination="zdI-yM-2zR" id="IBF-3Y-Sy4"/>
-                        <outlet property="navBar" destination="FaH-fn-myx" id="DV2-pB-g2F"/>
-                        <outlet property="note" destination="4LV-4K-XPL" id="wfp-bD-Nyz"/>
-                        <outlet property="priority" destination="KTM-R3-E4k" id="oD0-GP-gsB"/>
-                        <outlet property="taskName" destination="dBb-zR-aOP" id="0ht-CY-sV4"/>
+                        <outlet property="datePicker" destination="zdI-yM-2zR" id="iOp-VB-aJO"/>
+                        <outlet property="navBar" destination="FaH-fn-myx" id="1gF-hp-f9c"/>
+                        <outlet property="note" destination="4LV-4K-XPL" id="B7c-hk-A19"/>
+                        <outlet property="priority" destination="KTM-R3-E4k" id="Cw4-Ui-Tif"/>
+                        <outlet property="taskName" destination="dBb-zR-aOP" id="Mjd-wc-uR9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUN-Ya-sMu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
