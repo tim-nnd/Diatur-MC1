@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WPT-uR-Ogf">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Schedule-->
         <scene sceneID="QEU-7V-XEN">
             <objects>
                 <viewController storyboardIdentifier="schedule" id="WPT-uR-Ogf" customClass="ScheduleViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                         <viewLayoutGuide key="safeArea" id="13i-mx-PDc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="PXD-AC-KGQ"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" id="W5U-Ve-aWj"/>
                     <connections>
                         <outlet property="datePicker" destination="U9R-wu-dQx" id="0QH-uW-zza"/>
                         <outlet property="taskList" destination="zx8-Pp-cZi" id="5Tb-cq-YxR"/>
@@ -108,26 +108,9 @@
             </objects>
             <point key="canvasLocation" x="941.53846153846155" y="80.33175355450237"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="gTP-tS-eKJ">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="IeK-G1-pjl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VgU-ya-5hY">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="WPT-uR-Ogf" kind="relationship" relationship="viewControllers" id="WbX-tg-dRx"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BE3-ph-imf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="12.307692307692307" y="80.33175355450237"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
