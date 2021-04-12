@@ -32,6 +32,8 @@
 		E0020F00261E417700E0DBCA /* NewTask.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020EFF261E417700E0DBCA /* NewTask.storyboard */; };
 		E0020F07261ECB9100E0DBCA /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */; };
 		E0020F0A261EEA1200E0DBCA /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */; };
+		E0027D8D2621D5C600ACC1F2 /* SettingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0027D8C2621D5C600ACC1F2 /* SettingPage.storyboard */; };
+		E0027D912621DA7600ACC1F2 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0027D902621DA7600ACC1F2 /* SettingVC.swift */; };
 		E089483626208F5E0039B7E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089483526208F5E0039B7E5 /* ViewController.swift */; };
 		E08948402620970F0039B7E5 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089483E2620970F0039B7E5 /* OverviewViewController.swift */; };
 		E08948412620970F0039B7E5 /* DetailedTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E089483F2620970F0039B7E5 /* DetailedTaskTableViewCell.swift */; };
@@ -65,6 +67,8 @@
 		E0020EFF261E417700E0DBCA /* NewTask.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewTask.storyboard; sourceTree = "<group>"; };
 		E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		E0027D8C2621D5C600ACC1F2 /* SettingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingPage.storyboard; sourceTree = "<group>"; };
+		E0027D902621DA7600ACC1F2 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		E089483526208F5E0039B7E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E089483E2620970F0039B7E5 /* OverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		E089483F2620970F0039B7E5 /* DetailedTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedTaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,6 +115,9 @@
 		1C82714B261C62E5003A1B71 /* Diatur-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				E0027D9526242B4100ACC1F2 /* OnBoarding */,
+				E0027D9426242AE700ACC1F2 /* NewTask */,
+				E0027D9326242AA000ACC1F2 /* Setting */,
 				E089483D262096E10039B7E5 /* Task */,
 				1C0C14A2261DCA0100B0EDCC /* Model */,
 				1C82714C261C62E5003A1B71 /* AppDelegate.swift */,
@@ -124,10 +131,6 @@
 				ABABB7842620110C0001993C /* SettingDetailViewController.swift */,
 				ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */,
 				E089483526208F5E0039B7E5 /* ViewController.swift */,
-				E0020EFF261E417700E0DBCA /* NewTask.storyboard */,
-				E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */,
-				E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */,
-				E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */,
 				C065B7412620A22E004A9121 /* TestingGithubGakStashedViewController.swift */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
 				1C82715A261C62E6003A1B71 /* Info.plist */,
@@ -155,6 +158,33 @@
 				1CA41E0E261EF30900EF833D /* ScheduleViewController.swift */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		E0027D9326242AA000ACC1F2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				E0027D8C2621D5C600ACC1F2 /* SettingPage.storyboard */,
+				E0027D902621DA7600ACC1F2 /* SettingVC.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		E0027D9426242AE700ACC1F2 /* NewTask */ = {
+			isa = PBXGroup;
+			children = (
+				E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */,
+				E0020EFF261E417700E0DBCA /* NewTask.storyboard */,
+			);
+			path = NewTask;
+			sourceTree = "<group>";
+		};
+		E0027D9526242B4100ACC1F2 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				E0020F06261ECB9100E0DBCA /* OnBoarding.storyboard */,
+				E0020F09261EEA1200E0DBCA /* OnboardingVC.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		E089483D262096E10039B7E5 /* Task */ = {
@@ -231,6 +261,7 @@
 				E0020F00261E417700E0DBCA /* NewTask.storyboard in Resources */,
 				1C827154261C62E5003A1B71 /* Main.storyboard in Resources */,
 				1CA41E0C261EEAD600EF833D /* Schedule.storyboard in Resources */,
+				E0027D8D2621D5C600ACC1F2 /* SettingPage.storyboard in Resources */,
 				1CA41E12261EF7A300EF833D /* Summary.storyboard in Resources */,
 				E089484726209CE60039B7E5 /* LaunchScreen.storyboard in Resources */,
 				E0020F07261ECB9100E0DBCA /* OnBoarding.storyboard in Resources */,
@@ -250,6 +281,7 @@
 				C02E2C79261DCC83007A302A /* Ring.swift in Sources */,
 				ABABB78A262012E00001993C /* SettingDetailBreakViewController.swift in Sources */,
 				C02E2C7D261DD23B007A302A /* Setting.swift in Sources */,
+				E0027D912621DA7600ACC1F2 /* SettingVC.swift in Sources */,
 				AB316A09261F07EE00433D26 /* FirstSetupBreakViewController.swift in Sources */,
 				ABABB7852620110C0001993C /* SettingDetailViewController.swift in Sources */,
 				ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */,
