@@ -81,6 +81,8 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         datePicker.date = dateObj!
         navBar.title = "Edit"
     }
+    
+    
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
