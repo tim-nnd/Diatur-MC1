@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HYB-kp-d5u">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -45,6 +45,9 @@
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                     <imageReference key="image" image="chevron.backward" catalog="system" symbolScale="default" renderingMode="original"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="backButtonPress:" destination="HYB-kp-d5u" eventType="touchUpInside" id="NtN-SD-nB1"/>
+                                                </connections>
                                             </button>
                                             <color key="tintColor" name="AccentColor"/>
                                         </barButtonItem>
