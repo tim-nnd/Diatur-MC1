@@ -18,11 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
         // **** For Home Page *****
-        
+        /*
         let mainStoryboard = UIStoryboard.init(name: "SettingPage", bundle: nil)
         let mainOverviewVC = mainStoryboard.instantiateViewController(withIdentifier: "settingPage") as! SettingVC
         self.window?.rootViewController = mainOverviewVC
         self.window?.makeKeyAndVisible()
+ */
         
         // ******************
         

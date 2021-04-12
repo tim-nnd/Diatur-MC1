@@ -23,7 +23,11 @@ class SettingVC: UIViewController {
         settingList.delegate = self
         settingList.dataSource = self
     }
-
+    @IBAction func backButtonPress(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension SettingVC: UITableViewDelegate, UITableViewDataSource {
