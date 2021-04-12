@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // **** For Home Page *****
         
-        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let mainOverviewVC = mainStoryboard.instantiateViewController(withIdentifier: "OverviewVC") as! OverviewViewController
+        let mainStoryboard = UIStoryboard.init(name: "SettingPage", bundle: nil)
+        let mainOverviewVC = mainStoryboard.instantiateViewController(withIdentifier: "settingPage") as! SettingVC
         self.window?.rootViewController = mainOverviewVC
         self.window?.makeKeyAndVisible()
         
