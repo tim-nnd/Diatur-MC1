@@ -27,7 +27,9 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet weak var workBtn: UIButton!
     
+    @IBOutlet weak var frameTimer: UIImageView!
     
+    @IBOutlet weak var timerTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,7 @@ class TaskDetailViewController: UIViewController {
 //      Hiding a StartBtn, Showing stopwatch_Counter on startBtn Click
         ShowStopwatch()
         HideStartBtn()
+        timerOn()
         ShowBreakBtn()
         ShowFinishBtn()
     }
@@ -58,11 +61,11 @@ class TaskDetailViewController: UIViewController {
         //finish Timer
         alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: {(_)in
             
-            //do nothing
+            //do Show time used
         }))
         
         alert.addAction(UIAlertAction(title: "YES", style: .default, handler: {(_)in
-            
+        self.timerFinish()
             
             
         }))
@@ -78,9 +81,12 @@ class TaskDetailViewController: UIViewController {
     
     
     func ShowStopwatch (){
-//      Showing stopwatch Label
-        if (stopwatch_Counter.isHidden == true){
+//      Showing stopwatch Label, Frame, & Title
+        if (stopwatch_Counter.isHidden == true && frameTimer.isHidden == true && timerTitle.isHidden == true){
             stopwatch_Counter.isHidden = false
+            frameTimer.isHidden = false
+            timerTitle.isHidden = false
+            self.timerOn()
         
         }
     }
@@ -134,10 +140,10 @@ class TaskDetailViewController: UIViewController {
         }
         
     }
-//
-//  Stopwatch
+
+//  STOPWATCH
 //  [counting up timer]
-//
+
     
     
     var timerUp: Timer = Timer()
@@ -154,32 +160,46 @@ class TaskDetailViewController: UIViewController {
             HideBreakBtn()
             HideWorkBtn()
     }
+    }
     func timerOn(){
         if (countStatus == false)
         {
             countStatus = true
-            //timerUp = Timer.scheduledTimer(timeInterval: 1, target: self, selector: timerCounter(), userInfo: nil, repeats: true)
+            timerUp = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         
     }
     
-        func timerCounter() -> Void
+       @objc func timerCounter() -> Void
         {
             count = count + 1
+            let time = secondsToHoursMinutesSeconds(seconds: count)
+        let counterTimeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
+        stopwatch_Counter.text = counterTimeString
         }
         
         func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int)
         {
             return ((seconds / 3600), ((seconds % 3600)/60),((seconds % 3600) % 60))
         }
+    
+    func makeTimeString (hours: Int, minutes: Int, seconds: Int) -> String{
+        var counterTimeString = ""
+        counterTimeString += String(format: "%02d", hours)
+        counterTimeString += " : "
+        counterTimeString += String(format: "%02d", minutes)
+        counterTimeString += " : "
+        counterTimeString += String(format: "%02d", seconds)
+        return counterTimeString
     }
-    /*func LabelChange(){
+ /*
+    func LabelChange(){
         nameTask.text = "Ini nama Task"
         priorityTask.text = "Medium Priority"
         dateTask.text = "8 April 2021"
-        notesTask.text = "asbasbanwpienfio3930jnipvkn3oefjlndc owienoi23ncpiprknvoiwenfowejnfowienwepfwnefpiwekfnewifnkwfowknfdlfknweoflwenfpwfneojlnrpwiknwepfnpfiknweefpwikfnwepfknwfpekfnwpfknfpweifknwepfwnkefpkwenfewpin INI TEST GANTI DOANG"
-    }*/
-    
+        notesTask.text = "Ini contoh cobain data dummy, belom pake data asli yang dari new task, INI TEST GANTI DOANG"
+    }
+    */
     
     
     /*
