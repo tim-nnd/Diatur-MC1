@@ -9,6 +9,9 @@ import UIKit
 
 class ScheduleViewController: UIViewController {
 
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var taskList: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
