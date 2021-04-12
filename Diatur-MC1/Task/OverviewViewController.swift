@@ -22,7 +22,7 @@ class OverviewViewController: UIViewController {
     
     var inputDariFirstTime = 8
     
-    
+        
     // Reference dari Task.Swift
     var arrayTask: [Task] = [
         
@@ -97,16 +97,7 @@ class OverviewViewController: UIViewController {
     // Testing purposes
     @IBAction func userTap(_ sender: UIGestureRecognizer) {
         print("userTap")
-        
-        animate(complition: {
-            self.circle.strokeEnd = CGFloat(self.position)
-            print(self.circle.strokeEnd)
-        })
-        
-        
-    }
-    
-    func animate(complition: () -> Void ){
+        var fromValues = position
         
         let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
         
@@ -116,28 +107,23 @@ class OverviewViewController: UIViewController {
         
         labelWorkHour.text = "\(labelWorkHourText)/\(inputDariFirstTime)"
         
-        animateCircle.duration = 3
+       
+        animateCircle.fromValue = fromValues
         animateCircle.toValue = position
+       
         
         // Masalah Bug disini
         //circle.strokeEnd = CGFloat(position)
         //
+        animateCircle.duration = 1
         
-        animateCircle.duration = 3
-        
-        //After Animation Complete, it Stays.
-        animateCircle.fillMode = .forwards
-        animateCircle.isRemovedOnCompletion = false
+        circle.strokeEnd = CGFloat(position)
         
         circle.add(animateCircle, forKey: "Bebas")
-        // Masih ngebug disini
-        complition()
-    }
-    
-    func animation(){
         
-    }
-    
+       }
+
+
     @IBAction func addTask(_ sender: UIButton) {
         
         
