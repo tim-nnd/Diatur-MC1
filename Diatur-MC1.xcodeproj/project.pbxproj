@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0737BA2625633800106E39 /* RingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0737B92625633800106E39 /* RingData.swift */; };
 		1C0C14A4261DCA3800B0EDCC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0C14A3261DCA3800B0EDCC /* Task.swift */; };
 		1C7B610926248C6D009B59ED /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B610826248C6D009B59ED /* TaskData.swift */; };
 		1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82714C261C62E5003A1B71 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C0737B92625633800106E39 /* RingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingData.swift; sourceTree = "<group>"; };
 		1C0C14A3261DCA3800B0EDCC /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1C7B610826248C6D009B59ED /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		1C827149261C62E5003A1B71 /* Diatur-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diatur-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1C7B610826248C6D009B59ED /* TaskData.swift */,
+				1C0737B92625633800106E39 /* RingData.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
 				C065B7422620A22E004A9121 /* TestingGithubGakStashedViewController.swift in Sources */,
 				3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */,
+				1C0737BA2625633800106E39 /* RingData.swift in Sources */,
 				1C7B610926248C6D009B59ED /* TaskData.swift in Sources */,
 				E0020F0A261EEA1200E0DBCA /* OnboardingVC.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,
