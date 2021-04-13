@@ -54,7 +54,6 @@
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButton:" destination="XKL-Tb-sA3" eventType="touchUpInside" id="cxQ-7k-wEx"/>
-                                    <segue destination="uOH-w7-dhI" kind="show" id="lmd-Hb-RZT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -155,7 +154,6 @@
                                 <connections>
                                     <action selector="doneButton:" destination="7xT-EW-2zn" eventType="touchUpInside" id="0Kl-jY-bUc"/>
                                     <action selector="doneButton:" destination="XKL-Tb-sA3" eventType="touchUpInside" id="sru-qK-Kwl"/>
-                                    <segue destination="uOH-w7-dhI" kind="show" id="ise-6e-qPg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -173,9 +171,6 @@
             <point key="canvasLocation" x="482" y="151"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="lmd-Hb-RZT"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

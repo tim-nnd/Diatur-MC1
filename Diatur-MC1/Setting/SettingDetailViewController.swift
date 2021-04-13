@@ -31,5 +31,6 @@ class SettingDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
 
     @IBAction func doneButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
