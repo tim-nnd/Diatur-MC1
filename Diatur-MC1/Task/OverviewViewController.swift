@@ -18,19 +18,9 @@ class OverviewViewController: UIViewController {
     
     var cellID = "listCell"
     var labelWorkHourText = 0
-    var sorted: [Task] = []
+    var ListViewSorted: [Task] = []
     
     var inputDariFirstTime = 8
-    
-        
-    // Reference dari Task.Swift
-    var arrayTask: [Task] = [
-        
-        Task.init(name: "Ngoding Dulu", priority: 0),
-        Task.init(name: "Ahayy Ngoding", priority: 2),
-        Task.init(name: "Lagi MC1.2 Brooow", priority: 1),
-        Task.init(name: "LAGI UTS NICH", priority: 1)
-    ]
     
     var testingBaru = "Test Coding bareng Azka"
     
@@ -87,10 +77,14 @@ class OverviewViewController: UIViewController {
         
         ListTask.delegate = self
         ListTask.dataSource = self
+    
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
-        // Sort array
-        sorted = arrayTask.sorted(by: {$0.priority < $1.priority})
-        
+        arraySort()
+        ListTask.reloadData()
         
     }
     
@@ -107,10 +101,10 @@ class OverviewViewController: UIViewController {
         
         labelWorkHour.text = "\(labelWorkHourText)/\(inputDariFirstTime)"
         
-       
+        
         animateCircle.fromValue = fromValues
         animateCircle.toValue = position
-       
+        
         
         // Masalah Bug disini
         //circle.strokeEnd = CGFloat(position)
@@ -121,8 +115,10 @@ class OverviewViewController: UIViewController {
         
         circle.add(animateCircle, forKey: "Bebas")
         
-       }
-
+       
+        
+    }
+        
 
     @IBAction func addTask(_ sender: UIButton) {
         
@@ -132,6 +128,13 @@ class OverviewViewController: UIViewController {
     
     @IBAction func settingsButtonPressed(_ sender: UIButton) {
         
+        
+    }
+    
+    
+    func arraySort(){
+        // Sort array
+        ListViewSorted = TaskDatabase.taskArray.sorted(by: {$0.priority < $1.priority})
         
     }
     /*
@@ -152,7 +155,7 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return sorted.count
+        return ListViewSorted.count
     }
     
     
@@ -160,7 +163,7 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         
         let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailedTaskTableViewCell
         
-        let dataDummy = sorted[indexPath.row]
+        let dataDummy = ListViewSorted[indexPath.row]
         
         
         switch dataDummy.priority {
@@ -190,8 +193,8 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
         
         
-        cell.titleLabel = sorted[indexPath.row].name
-        cell.prorityLabelIndicator = sorted[indexPath.row].priority
+        cell.titleLabel = ListViewSorted[indexPath.row].name
+        cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
         
         ListTask.deselectRow(at: indexPath, animated: true)
         
@@ -201,14 +204,34 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+        let counts = TaskDatabase.taskArray.count
+        
         let deleteButtonAction = UIContextualAction(style: .destructive, title: "", handler: { (action, deleteView, onComplete) in
             
-            self.sorted.remove(at: indexPath.row)
+            self.ListViewSorted.remove(at: indexPath.row)
+            
+            // Delete Selected Index
+            var indexDelete = 0
+            
+            for x in 0...counts-1 {
+                
+                if TaskDatabase.taskArray[x].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[x].priority == self.ListViewSorted[indexPath.row].priority{
+                    
+                    
+                    indexDelete = x
+                    print(indexDelete, x)
+                }
+            }
+            
+            
+            TaskDatabase.taskArray.remove(at: indexDelete)
+            
+            self.arraySort()
             
             self.ListTask.deleteRows(at: [indexPath], with: .left)
             self.ListTask.reloadData()
             print("Delete")
-
+            
         })
         
         deleteButtonAction.image = deleteImage
