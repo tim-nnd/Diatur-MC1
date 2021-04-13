@@ -185,6 +185,20 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
+        
+        
+        cell.titleLabel = sorted[indexPath.row].name
+        cell.prorityLabelIndicator = sorted[indexPath.row].priority
+        
+        ListTask.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(cell, animated: true)
+    }
+    
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteButtonAction = UIContextualAction(style: .destructive, title: "", handler: { (action, deleteView, onComplete) in
@@ -212,6 +226,9 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         
         
     }
+    
+    
+    
     
 }
 

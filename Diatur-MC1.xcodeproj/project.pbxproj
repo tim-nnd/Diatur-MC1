@@ -119,6 +119,8 @@
 				E0027D9426242AE700ACC1F2 /* NewTask */,
 				E0027D9326242AA000ACC1F2 /* Setting */,
 				E089483D262096E10039B7E5 /* Task */,
+				1CA41E1A261F194300EF833D /* Schedule */,
+				1CA41E18261F0B7E00EF833D /* Summary */,
 				1C0C14A2261DCA0100B0EDCC /* Model */,
 				1C82714C261C62E5003A1B71 /* AppDelegate.swift */,
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
@@ -136,8 +138,6 @@
 				1C82715A261C62E6003A1B71 /* Info.plist */,
 				3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */,
 				3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */,
-				1CA41E1A261F194300EF833D /* Schedule */,
-				1CA41E18261F0B7E00EF833D /* Summary */,
 			);
 			path = "Diatur-MC1";
 			sourceTree = "<group>";
