@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C0C14A4261DCA3800B0EDCC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0C14A3261DCA3800B0EDCC /* Task.swift */; };
+		1C7B610926248C6D009B59ED /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7B610826248C6D009B59ED /* TaskData.swift */; };
 		1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82714C261C62E5003A1B71 /* AppDelegate.swift */; };
 		1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82714E261C62E5003A1B71 /* SceneDelegate.swift */; };
 		1C827154261C62E5003A1B71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C827152261C62E5003A1B71 /* Main.storyboard */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		1C0C14A3261DCA3800B0EDCC /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		1C7B610826248C6D009B59ED /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		1C827149261C62E5003A1B71 /* Diatur-MC1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Diatur-MC1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C82714C261C62E5003A1B71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C82714E261C62E5003A1B71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1C7B610726248C34009B59ED /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				1C7B610826248C6D009B59ED /* TaskData.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		1C827140261C62E5003A1B71 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		1C82714B261C62E5003A1B71 /* Diatur-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				1C7B610726248C34009B59ED /* Database */,
 				E0027D9526242B4100ACC1F2 /* OnBoarding */,
 				E0027D9426242AE700ACC1F2 /* NewTask */,
 				E0027D9326242AA000ACC1F2 /* Setting */,
@@ -289,6 +300,7 @@
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
 				C065B7422620A22E004A9121 /* TestingGithubGakStashedViewController.swift in Sources */,
 				3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */,
+				1C7B610926248C6D009B59ED /* TaskData.swift in Sources */,
 				E0020F0A261EEA1200E0DBCA /* OnboardingVC.swift in Sources */,
 				1C82714F261C62E5003A1B71 /* SceneDelegate.swift in Sources */,
 				E08948402620970F0039B7E5 /* OverviewViewController.swift in Sources */,

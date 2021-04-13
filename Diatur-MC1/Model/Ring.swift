@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Ring {
+class Ring {
     var workTime: Int
     var date: Date
+    
+    init(workTime: Int, date: Date) {
+        self.workTime = workTime
+        self.date = date
+    }
 }
