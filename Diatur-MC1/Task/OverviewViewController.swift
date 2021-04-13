@@ -242,6 +242,8 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         
         let editButtonAction = UIContextualAction(style: .normal, title: "", handler: { (actions, editView, onComplete) in
             print("edit")
+            
+            self.performSegue(withIdentifier: "editTask", sender: self)
         })
         
         editButtonAction.image = UIImage(systemName: "pencil")
@@ -252,8 +254,18 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         return config
         
         
+        
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editTask"{
+            let destinationVC = segue.destination as! NewTaskVC
+            destinationVC.parameterEdit = 1
+        }
+       
+        
+        
+    }
     
     
     

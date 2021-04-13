@@ -180,6 +180,7 @@
                         <outlet property="labelWorkHour" destination="sgL-Al-pH5" id="RuK-Gt-rHX"/>
                         <outlet property="todayListTitle" destination="Bm9-my-SJz" id="MQQ-fd-CCe"/>
                         <segue destination="5Im-R7-rwQ" kind="presentation" identifier="addToAdd" id="Wqb-2S-2Cx"/>
+                        <segue destination="5Im-R7-rwQ" kind="presentation" identifier="editTask" id="Nzf-q8-bYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1C-M4-Qlj" sceneMemberID="firstResponder"/>
@@ -275,6 +276,9 @@
             <point key="canvasLocation" x="1789.2307692307693" y="79.620853080568722"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Nzf-q8-bYD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="circle.dashed.inset.fill" catalog="system" width="128" height="121"/>
