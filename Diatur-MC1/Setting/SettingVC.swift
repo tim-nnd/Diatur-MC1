@@ -29,6 +29,9 @@ class SettingVC: UIViewController {
     }
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: Any){
+        
+      
+        
         if segue.identifier == "settingDetailWork" {
             if let vc = storyboard?.instantiateViewController(withIdentifier : "settingDetailWork") as? SettingDetailViewController {
                 navigationController?.pushViewController(vc, animated : true)
@@ -39,6 +42,8 @@ class SettingVC: UIViewController {
                 navigationController?.pushViewController(vc, animated : true)
             }
         }
+        
+        
     }
     
 }
@@ -66,6 +71,8 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        settingList.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.row {
         case 0:

@@ -50,6 +50,7 @@ class TaskDetailViewController: UIViewController {
         
         nameTask.text = titleLabel
         
+       
         
         switch prorityLabelIndicator {
         
@@ -82,6 +83,8 @@ class TaskDetailViewController: UIViewController {
         timerUpOn()
         ShowBreakBtn()
         ShowFinishBtn()
+        
+        self.navigationItem.setHidesBackButton(true, animated:true)
     }
     
     @IBAction func breakBtnOnTapped(_ sender: UIButton) {
