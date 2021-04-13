@@ -7,7 +7,21 @@
 
 import Foundation
 
-struct Ring {
+class Ring {
     var workTime: Int
     var date: Date
+    
+    init(workTime: Int, date: Date) {
+        self.workTime = workTime
+        self.date = date
+    }
+    
+    func todayLifeTime() -> Int {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour-workTime
+    }
+    
+    func summaryLifeTime() -> Int {
+        return 24-workTime
+    }
 }

@@ -16,25 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Priority indicator" translatesAutoresizingMaskIntoConstraints="NO" id="nY6-1w-YCy">
-                                <rect key="frame" x="16" y="109" width="15" height="15"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nY6-1w-YCy">
+                                <rect key="frame" x="16" y="135" width="15" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.92550617459999995" green="0.30982205270000002" blue="0.26274609570000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="chevron.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0ul-6H-bNW">
-                                <rect key="frame" x="11" y="44" width="18" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OM-S8-W7x">
-                                <rect key="frame" x="36" y="41" width="40" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="NavBackBtnOnTapped:" destination="C7k-ak-WNN" eventType="touchUpInside" id="uN6-6P-mBj"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title of The Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gth-0l-2Wx">
-                                <rect key="frame" x="16" y="80" width="156" height="27"/>
+                                <rect key="frame" x="16" y="106" width="156" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -45,14 +33,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds0-LU-9rI">
-                                <rect key="frame" x="34" y="109" width="71" height="15"/>
+                                <rect key="frame" x="34" y="135" width="190" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="18 March 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCo-nK-wPy">
-                                <rect key="frame" x="16" y="134" width="85" height="15"/>
+                                <rect key="frame" x="16" y="160" width="85" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
@@ -137,7 +125,8 @@
                         <outlet property="frameTimer" destination="kA8-zV-hHw" id="QBA-aV-pnY"/>
                         <outlet property="nameTask" destination="Gth-0l-2Wx" id="Lx8-HW-eP0"/>
                         <outlet property="notesTask" destination="5KG-Av-4iL" id="dAO-3g-fEm"/>
-                        <outlet property="priorityTask" destination="tCo-nK-wPy" id="kaK-bm-05O"/>
+                        <outlet property="pirorityImage" destination="nY6-1w-YCy" id="MhQ-kS-lC9"/>
+                        <outlet property="priorityLabel" destination="Ds0-LU-9rI" id="ew9-dp-9Fu"/>
                         <outlet property="startBtn" destination="1aM-dZ-PZs" id="dNO-kq-5tl"/>
                         <outlet property="stopwatch_Counter" destination="8O8-bR-Wah" id="n2g-Rm-fAD"/>
                         <outlet property="timerTitle" destination="djm-i8-gah" id="gJX-Bg-aFf"/>
@@ -154,11 +143,10 @@
     <resources>
         <image name="BreakBtn" width="71" height="71"/>
         <image name="FinishBtn" width="71" height="71"/>
-        <image name="Priority indicator" width="15" height="15"/>
         <image name="Start" width="226" height="226"/>
         <image name="TimerFrame" width="226" height="226"/>
         <image name="WorkBtn" width="71" height="71"/>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

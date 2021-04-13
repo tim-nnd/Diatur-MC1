@@ -1,19 +1,18 @@
 //
-//  FirstSetupBreakViewController.swift
+//  SettingDetailBreakViewController.swift
 //  Diatur-MC1
 //
-//  Created by Komang Aryadinata on 08/04/21.
+//  Created by Komang Aryadinata on 09/04/21.
 //
 
 import UIKit
 
-let arrayDataBreakMinute = ["5","10","15"]
-let arrayDataWorkMinute = ["15", "30","45","60"]
-
-class FirstSetupBreakViewController: UIViewController {
+class SettingDetailBreakViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var pickerViewBreakMinute: UIPickerView!
     @IBOutlet weak var pickerViewWorkMinute: UIPickerView!
-    @IBOutlet weak var nextButtonBreak: UIButton!
+    
+    let arrayDataBreakMinuteSetting = ["5","10","15"]
+    let arrayDataWorkMinuteSetting = ["15", "30","45","60"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,31 +22,30 @@ class FirstSetupBreakViewController: UIViewController {
         pickerViewWorkMinute.dataSource = self
         pickerViewWorkMinute.delegate = self
     }
-}
 
-extension FirstSetupBreakViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == pickerViewBreakMinute {
-            return arrayDataBreakMinute.count
+            return arrayDataBreakMinuteSetting.count
         }
         else if pickerView == pickerViewWorkMinute {
-            return arrayDataWorkMinute.count
+            return arrayDataWorkMinuteSetting.count
         }
         return 1
     }
-}
-extension FirstSetupBreakViewController: UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerViewBreakMinute {
-            return arrayDataBreakMinute[row]
+            return arrayDataBreakMinuteSetting[row]
         }
         else if pickerView == pickerViewWorkMinute {
-            return arrayDataWorkMinute[row]
+            return arrayDataWorkMinuteSetting[row]
         }
         return ""
     }
+    @IBAction func doneButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
-

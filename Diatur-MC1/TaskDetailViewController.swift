@@ -11,7 +11,9 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet weak var nameTask: UILabel!
     
-    @IBOutlet weak var priorityTask: UILabel!
+    @IBOutlet weak var priorityLabel: UILabel!
+    
+    @IBOutlet weak var pirorityImage: UIImageView!
     
     @IBOutlet weak var dateTask: UILabel!
     
@@ -27,23 +29,51 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet weak var workBtn: UIButton!
     
+
     @IBOutlet weak var frameTimer: UIImageView!
     
     @IBOutlet weak var timerTitle: UILabel!
     
     @IBOutlet weak var breakLabel: UILabel!
+
+    // Dapet Value dari Overview (Dummy)
+    
+    var titleLabel: String = ""
+    var prorityLabelIndicator: Int = 0
+    
+
     
     @IBOutlet weak var timer_Counter: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameTask.text = titleLabel
+        
+        
+        switch prorityLabelIndicator {
+        
+        case 0:
+            pirorityImage.tintColor = #colorLiteral(red: 0.9255061746, green: 0.3098220527, blue: 0.2627460957, alpha: 1)
+            priorityLabel.text = "High Priority"
+            
+        case 1:
+            pirorityImage.tintColor = #colorLiteral(red: 0.976410687, green: 0.8706294894, blue: 0.3489934802, alpha: 1)
+            priorityLabel.text = "Medium Priority"
+            
+        case 2:
+            pirorityImage.tintColor = #colorLiteral(red: 0.6469622254, green: 0.7765128613, blue: 0.694031775, alpha: 1)
+            priorityLabel.text = "Low Priority"
+            
+        default:
+           return
+            
+        }
+
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func NavBackBtnOnTapped(_ sender: UIButton) {
-    }
-    
+  
     
     @IBAction func startBtnOnTapped(_ sender: UIButton) {
         //      Hiding a StartBtn, Showing stopwatch_Counter on startBtn Click
@@ -67,16 +97,21 @@ class TaskDetailViewController: UIViewController {
         //confirmation finish
         let alert = UIAlertController (title: "Finish Task Confirmation", message: "are you sure you want to finish current task?", preferredStyle: .alert)
         //finish Timer
-        alert.addAction(UIAlertAction(title: "CANCEL", style: .destructive, handler: {(_)in
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {(_)in
             
             //result: show time used
         }))
         
-        alert.addAction(UIAlertAction(title: "YES", style: .default, handler: {(_)in
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(_)in
             self.timerUpFinish()
             self.HideFinishBtn()
             self.HideTimer()
             
+            if let nav = self.navigationController{
+                nav.popViewController(animated: true)
+            }
+                
             
         }))
         
