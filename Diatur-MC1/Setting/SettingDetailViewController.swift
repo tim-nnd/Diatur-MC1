@@ -7,32 +7,29 @@
 
 import UIKit
 
-let arrayDataWorkHourSetting = ["1", "2","3","4","5","6","7","8","9","10","11","12"]
-
-class SettingDetailViewController: UIViewController {
+class SettingDetailViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var pickerViewWorkHourSetting: UIPickerView!
-    @IBOutlet weak var navigationBarSettings: UINavigationBar!
-    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
+    let arrayDataWorkHourSetting = ["1", "2","3","4","5","6","7","8","9","10","11","12"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerViewWorkHourSetting.dataSource = self
         pickerViewWorkHourSetting.delegate = self
     }
-}
-
-extension SettingDetailViewController: UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arrayDataWorkHourSetting.count
     }
-}
 
-extension SettingDetailViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return arrayDataWorkHourSetting[row]
+    }
+
+    @IBAction func doneButton(_ sender: UIButton) {
     }
 }

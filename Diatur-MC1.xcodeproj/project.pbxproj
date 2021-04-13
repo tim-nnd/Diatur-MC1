@@ -128,6 +128,7 @@
 		1C82714B261C62E5003A1B71 /* Diatur-MC1 */ = {
 			isa = PBXGroup;
 			children = (
+				AB0F4D8026256C3C00911EED /* FirstSeup */,
 				1C7B610726248C34009B59ED /* Database */,
 				E0027D9526242B4100ACC1F2 /* OnBoarding */,
 				E0027D9426242AE700ACC1F2 /* NewTask */,
@@ -140,12 +141,6 @@
 				1C82714E261C62E5003A1B71 /* SceneDelegate.swift */,
 				1C827152261C62E5003A1B71 /* Main.storyboard */,
 				E089484526209CE60039B7E5 /* LaunchScreen.storyboard */,
-				ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */,
-				ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */,
-				AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */,
-				ABABB78026200D110001993C /* SettingDetail.storyboard */,
-				ABABB7842620110C0001993C /* SettingDetailViewController.swift */,
-				ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */,
 				E089483526208F5E0039B7E5 /* ViewController.swift */,
 				C065B7412620A22E004A9121 /* TestingGithubGakStashedViewController.swift */,
 				1C827155261C62E6003A1B71 /* Assets.xcassets */,
@@ -174,9 +169,22 @@
 			path = Schedule;
 			sourceTree = "<group>";
 		};
+		AB0F4D8026256C3C00911EED /* FirstSeup */ = {
+			isa = PBXGroup;
+			children = (
+				ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */,
+				ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */,
+				AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */,
+			);
+			path = FirstSeup;
+			sourceTree = "<group>";
+		};
 		E0027D9326242AA000ACC1F2 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				ABABB78026200D110001993C /* SettingDetail.storyboard */,
+				ABABB7842620110C0001993C /* SettingDetailViewController.swift */,
+				ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */,
 				E0027D8C2621D5C600ACC1F2 /* SettingPage.storyboard */,
 				E0027D902621DA7600ACC1F2 /* SettingVC.swift */,
 			);

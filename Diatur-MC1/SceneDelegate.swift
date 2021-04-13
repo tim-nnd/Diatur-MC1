@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainOverviewVC = mainStoryboard.instantiateViewController(withIdentifier: "settingPage") as! SettingVC
         self.window?.rootViewController = mainOverviewVC
         self.window?.makeKeyAndVisible()
- */
+         */
         
         // ******************
         
@@ -39,21 +39,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
  
         
         // ****FOR FIRST SETUP***
-        /*
-        let firstSetupStoryBoard = UIStoryboard.init(name: "FirstSetup", bundle: nil)
-        let firstSetupViewController = firstSetupStoryBoard.instantiateViewController(withIdentifier: "firstSetupWork") as! FirstSetupViewController
+        /*let firstSetupStoryBoard = UIStoryboard.init(name: "FirstSetup", bundle: nil)
+        let firstSetupViewController = firstSetupStoryBoard.instantiateViewController(withIdentifier: "navigationController") as! UINavigationController
         self.window?.rootViewController = firstSetupViewController
         self.window?.makeKeyAndVisible()
         */
         // ****
         
         // ****FOR SETTING DETAIL***
-        /*
         let settingDetailStoryBoard = UIStoryboard.init(name: "SettingDetail", bundle: nil)
         let settingDetailViewController = settingDetailStoryBoard.instantiateViewController(withIdentifier: "settingDetailWork") as! SettingDetailViewController
         self.window?.rootViewController = settingDetailViewController
         self.window?.makeKeyAndVisible()
-        */
         // ****
         
         guard let _ = (scene as? UIWindowScene) else { return }
