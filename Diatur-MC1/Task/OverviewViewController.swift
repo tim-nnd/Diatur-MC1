@@ -77,6 +77,9 @@ class OverviewViewController: UIViewController {
         
         ListTask.delegate = self
         ListTask.dataSource = self
+        
+        arraySort()
+        
     
     }
     
@@ -164,6 +167,7 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailedTaskTableViewCell
         
         let dataDummy = ListViewSorted[indexPath.row]
+      
         
         
         switch dataDummy.priority {
@@ -206,20 +210,20 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         
         let counts = TaskDatabase.taskArray.count
         
+        
         let deleteButtonAction = UIContextualAction(style: .destructive, title: "", handler: { (action, deleteView, onComplete) in
-            
-            self.ListViewSorted.remove(at: indexPath.row)
-            
+           
             // Delete Selected Index
             var indexDelete = 0
-            
-            for x in 0...counts-1 {
-                
-                if TaskDatabase.taskArray[x].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[x].priority == self.ListViewSorted[indexPath.row].priority{
+           
+            for x in 0 ... (counts - 1) {
+               
+              if TaskDatabase.taskArray[x].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[x].priority == self.ListViewSorted[indexPath.row].priority{
                     
                     
                     indexDelete = x
                     print(indexDelete, x)
+                    
                 }
             }
             

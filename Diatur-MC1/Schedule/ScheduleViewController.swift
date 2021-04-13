@@ -101,6 +101,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             for n in 0...(TaskDatabase.taskArray.count-1) {
                 if TaskDatabase.taskArray[n].name == self.sortedData[indexPath.row].name && TaskDatabase.taskArray[n].priority == self.sortedData[indexPath.row].priority {
                     deleteIndex = n
+                    print(deleteIndex, n)
                 }
             }
             
