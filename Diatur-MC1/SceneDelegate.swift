@@ -19,24 +19,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // **** For Home Page *****
         /*
-        let mainStoryboard = UIStoryboard.init(name: "SettingPage", bundle: nil)
-        let mainOverviewVC = mainStoryboard.instantiateViewController(withIdentifier: "settingPage") as! SettingVC
+        let mainStoryboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let mainOverviewVC = mainStoryboard.instantiateViewController(withIdentifier: "OverviewVC") as! OverviewViewController
         self.window?.rootViewController = mainOverviewVC
         self.window?.makeKeyAndVisible()
-         */
+
+        */
+
+        /*
         
+
         // ******************
         
         // *****FOR TASK DETAIL******
-        /*
+        
         let taskDetailStoryboard = UIStoryboard.init(name: "TaskDetail", bundle: nil)
         let taskDetailVC = taskDetailStoryboard.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
         self.window?.rootViewController = taskDetailVC
         self.window?.makeKeyAndVisible()
-        */
+        
         // ***************
         
- 
+ */
         
         // ****FOR FIRST SETUP***
         /*let firstSetupStoryBoard = UIStoryboard.init(name: "FirstSetup", bundle: nil)
