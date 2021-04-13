@@ -12,6 +12,10 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var taskList: UITableView!
     
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var workHourLabel: UILabel!
+    @IBOutlet weak var lifeHourLabel: UILabel!
+    
     var sortedData: [Task] = []
     
     override func viewDidLoad() {
