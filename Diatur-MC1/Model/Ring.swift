@@ -11,6 +11,16 @@ class Ring {
     var workTime: Int
     var date: Date
     
+    init() {
+        self.workTime = 0
+        self.date = Date()
+    }
+    
+    init(date: Date) {
+        self.workTime = 0
+        self.date = date
+    }
+    
     init(workTime: Int, date: Date) {
         self.workTime = workTime
         self.date = date
@@ -22,6 +32,6 @@ class Ring {
     }
     
     func summaryLifeTime() -> Int {
-        return 24-workTime
+        return 24 - workTime
     }
 }

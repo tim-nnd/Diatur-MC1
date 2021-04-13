@@ -9,9 +9,9 @@ import Foundation
 
 struct TaskDatabase {
     static var taskArray: [Task] = [
-        Task.init(name: "Ngoding Dulu", priority: 0),
-        Task.init(name: "Ahayy Ngoding", priority: 2),
-        Task.init(name: "Lagi MC1.2 Brooow", priority: 1),
-        Task.init(name: "LAGI UTS NICH", priority: 1)
+        Task(name: "Ngoding Dulu", priority: 0),
+        Task(name: "Ahayy Ngoding", priority: 2),
+        Task(name: "Lagi MC1.2 Brooow", priority: 1),
+        Task(name: "LAGI UTS NICH", priority: 1)
     ]
 }
