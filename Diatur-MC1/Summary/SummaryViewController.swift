@@ -48,7 +48,15 @@ class SummaryViewController: UIViewController {
     }
     
     func getSortedData() {
-        sortedData = TaskDatabase.taskArray.sorted(by: {$0.priority < $1.priority})
+        var filteredData: [Task] = []
+        
+        for task in TaskDatabase.taskArray {
+            if Calendar.current.compare(task.date, to: datePicker.date, toGranularity: .day) == .orderedSame && task.isCompleted {
+                filteredData.append(task)
+            }
+        }
+        
+        sortedData = filteredData.sorted(by: {$0.priority < $1.priority})
     }
     
     func getRing() {
@@ -162,6 +170,9 @@ class SummaryViewController: UIViewController {
     @IBAction func datePickerChanged(_ sender: Any) {
         updateSummary()
         animateCircle()
+        
+        getSortedData()
+        self.taskList.reloadData()
     }
     
     /*
