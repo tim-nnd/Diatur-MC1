@@ -97,6 +97,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
 //            cari index yg bakal didelete di array database (karena urutan sorted dengan database beda)
 //            *ini prone to unwanted case (case dimana nama dan priority 2 task sama tetapi tanggal beda* (untuk sekarang gk terlalu bermasalah)
             var deleteIndex = 0
+            
             for n in 0...(TaskDatabase.taskArray.count-1) {
                 if TaskDatabase.taskArray[n].name == self.sortedData[indexPath.row].name && TaskDatabase.taskArray[n].priority == self.sortedData[indexPath.row].priority {
                     deleteIndex = n

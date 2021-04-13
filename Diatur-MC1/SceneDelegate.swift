@@ -47,11 +47,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // ****
         
         // ****FOR SETTING DETAIL***
+        /*
         let settingDetailStoryBoard = UIStoryboard.init(name: "SettingDetail", bundle: nil)
         let settingDetailViewController = settingDetailStoryBoard.instantiateViewController(withIdentifier: "settingDetailWork") as! SettingDetailViewController
         self.window?.rootViewController = settingDetailViewController
         self.window?.makeKeyAndVisible()
         // ****
+        */
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

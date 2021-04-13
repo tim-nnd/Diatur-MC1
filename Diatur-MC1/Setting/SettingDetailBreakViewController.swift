@@ -46,5 +46,6 @@ class SettingDetailBreakViewController: UIViewController, UIPickerViewDataSource
         return ""
     }
     @IBAction func doneButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
