@@ -1,18 +1,19 @@
 //
-//  SettingDetailBreakViewController.swift
+//  FirstSetupBreakViewController.swift
 //  Diatur-MC1
 //
-//  Created by Komang Aryadinata on 09/04/21.
+//  Created by Komang Aryadinata on 08/04/21.
 //
 
 import UIKit
 
-let arrayDataBreakMinuteSetting = ["5","10","15"]
-let arrayDataWorkMinuteSetting = ["15", "30","45","60"]
-
-class SettingDetailBreakViewController: UIViewController {
+class FirstSetupBreakViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var pickerViewBreakMinute: UIPickerView!
     @IBOutlet weak var pickerViewWorkMinute: UIPickerView!
+    @IBOutlet weak var nextButtonBreak: UIButton!
+    
+    let arrayDataBreakMinute = ["5","10","15"]
+    let arrayDataWorkMinute = ["15", "30","45","60"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,30 +23,33 @@ class SettingDetailBreakViewController: UIViewController {
         pickerViewWorkMinute.dataSource = self
         pickerViewWorkMinute.delegate = self
     }
-}
 
-extension SettingDetailBreakViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == pickerViewBreakMinute {
-            return arrayDataBreakMinuteSetting.count
+            return arrayDataBreakMinute.count
         }
         else if pickerView == pickerViewWorkMinute {
-            return arrayDataWorkMinuteSetting.count
+            return arrayDataWorkMinute.count
         }
         return 1
     }
-}
-extension SettingDetailBreakViewController: UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerViewBreakMinute {
-            return arrayDataBreakMinuteSetting[row]
+            return arrayDataBreakMinute[row]
         }
         else if pickerView == pickerViewWorkMinute {
-            return arrayDataWorkMinuteSetting[row]
+            return arrayDataWorkMinute[row]
         }
         return ""
     }
+    @IBAction func nextButtonBreak(_ sender: UIButton) {
+    }
+    @IBAction func dontSetButton(_ sender: UIButton) {
+    }
+    
 }
+

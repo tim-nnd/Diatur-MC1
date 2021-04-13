@@ -8,10 +8,12 @@
 import UIKit
 
 class TaskDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var nameTask: UILabel!
     
-    @IBOutlet weak var priorityTask: UILabel!
+    @IBOutlet weak var priorityLabel: UILabel!
+    
+    @IBOutlet weak var pirorityImage: UIImageView!
     
     @IBOutlet weak var dateTask: UILabel!
     
@@ -27,43 +29,89 @@ class TaskDetailViewController: UIViewController {
     
     @IBOutlet weak var workBtn: UIButton!
     
+
+    @IBOutlet weak var frameTimer: UIImageView!
     
+    @IBOutlet weak var timerTitle: UILabel!
+    
+    @IBOutlet weak var breakLabel: UILabel!
+
+    // Dapet Value dari Overview (Dummy)
+    
+    var titleLabel: String = ""
+    var prorityLabelIndicator: Int = 0
+    
+
+    
+    @IBOutlet weak var timer_Counter: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameTask.text = titleLabel
+        
+        
+        switch prorityLabelIndicator {
+        
+        case 0:
+            pirorityImage.tintColor = #colorLiteral(red: 0.9255061746, green: 0.3098220527, blue: 0.2627460957, alpha: 1)
+            priorityLabel.text = "High Priority"
+            
+        case 1:
+            pirorityImage.tintColor = #colorLiteral(red: 0.976410687, green: 0.8706294894, blue: 0.3489934802, alpha: 1)
+            priorityLabel.text = "Medium Priority"
+            
+        case 2:
+            pirorityImage.tintColor = #colorLiteral(red: 0.6469622254, green: 0.7765128613, blue: 0.694031775, alpha: 1)
+            priorityLabel.text = "Low Priority"
+            
+        default:
+           return
+            
+        }
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func NavBackBtnOnTapped(_ sender: UIButton) {
-    }
-    
+  
     
     @IBAction func startBtnOnTapped(_ sender: UIButton) {
-//      Hiding a StartBtn, Showing stopwatch_Counter on startBtn Click
+        //      Hiding a StartBtn, Showing stopwatch_Counter on startBtn Click
         ShowStopwatch()
         HideStartBtn()
+        timerUpOn()
         ShowBreakBtn()
         ShowFinishBtn()
     }
     
     @IBAction func breakBtnOnTapped(_ sender: UIButton) {
         ShowWorkBtn()
+        ShowTimer()
+        timerUpOn()
         HideBreakBtn()
+        breakLabel.isHidden = false
+        isBreakTimerActive = true
     }
     
     @IBAction func finishBtnOnTapped(_ sender: UIButton) {
         //confirmation finish
         let alert = UIAlertController (title: "Finish Task Confirmation", message: "are you sure you want to finish current task?", preferredStyle: .alert)
         //finish Timer
-        alert.addAction(UIAlertAction(title: "CANCEL", style: .cancel, handler: {(_)in
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {(_)in
             
-            //do nothing
+            //result: show time used
         }))
         
-        alert.addAction(UIAlertAction(title: "YES", style: .default, handler: {(_)in
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(_)in
+            self.timerUpFinish()
+            self.HideFinishBtn()
+            self.HideTimer()
             
-            
+            if let nav = self.navigationController{
+                nav.popViewController(animated: true)
+            }
+                
             
         }))
         
@@ -73,124 +121,230 @@ class TaskDetailViewController: UIViewController {
     
     @IBAction func workBtnOnTapped(_ sender: UIButton) {
         ShowBreakBtn()
+        timerDownReset()
         HideWorkBtn()
+        breakLabel.isHidden = true
+        timer_Counter.isHidden = true
     }
     
     
     func ShowStopwatch (){
-//      Showing stopwatch Label
-        if (stopwatch_Counter.isHidden == true){
+        //      Showing stopwatch Label, Frame, & Title
+        if (stopwatch_Counter.isHidden == true && frameTimer.isHidden == true && timerTitle.isHidden == true){
             stopwatch_Counter.isHidden = false
-        
+            frameTimer.isHidden = false
+            timerTitle.isHidden = false
+            self.timerUpOn()
+            
+        }
+    }
+    
+    
+    func ShowTimer()
+    {
+        //timer_Counter.isHidden.toggle()
+        //    showing countdown timer counter
+        if timer_Counter.isHidden == true {
+            timer_Counter.isHidden = false
+        }
+    }
+    func HideTimer() {
+        //    hide countdown timer counter
+        if timer_Counter.isHidden == false {
+            timer_Counter.isHidden = true
+            breakLabel.isHidden = true
         }
     }
     
     func HideStartBtn(){
-//      hiding StartBtn
+        //      hiding StartBtn
         if (startBtn.isHidden == false){
             startBtn.isHidden = true
         }
     }
     
     func ShowBreakBtn(){
-//      showing breakBtn
+        //      showing breakBtn
         if (breakBtn.isHidden == true){
             breakBtn.isHidden = false
         }
     }
     
     func HideBreakBtn(){
-//      hide breakBtn
+        //      hide breakBtn
         if (breakBtn.isHidden == false){
             breakBtn.isHidden = true
         }
     }
     
     func ShowWorkBtn(){
-//      showing workBtn
+        //      showing workBtn
         if (workBtn.isHidden == true){
             workBtn.isHidden = false
         }
     }
     
     func HideWorkBtn(){
-//        hideWorkBtn
+        //        hideWorkBtn
         if (workBtn.isHidden == false) {
             workBtn.isHidden = true
         }
     }
     
     func ShowFinishBtn(){
-//        show finishBtn
+        //        show finishBtn
         if (finishBtn.isHidden == true){
             finishBtn.isHidden = false
         }
     }
     
-    func HideFinishBt() {
-//        hide finishBtn
+    func HideFinishBtn() {
+        //        hide finishBtn
         if (finishBtn.isHidden == false){
+            finishBtn.isHidden = true
             
         }
         
     }
-//
-//  Stopwatch
-//  [counting up timer]
-//
+    
+    //  STOPWATCH & TIMER
+    //  [counting up timer]
+    
+    var mainTimer: Timer = Timer()
+    var timeCounter: Int = 0
+    var isStopwatchActive:Bool = false
+    var breakTimeRemaining = 301
+    var isBreakTimerActive = false
+//    var breakTimer: Timer = Timer()
     
     
-    var timerUp: Timer = Timer()
-    var count: Int = 0
-    var countStatus:Bool = false
-
-    
-    func timerFinish() {
-        if (countStatus == true)
+    func timerUpFinish() {
+        if (isStopwatchActive)
         {
-            countStatus = false
-            timerUp.invalidate()
-            
+            isStopwatchActive = false
+            mainTimer.invalidate()
             HideBreakBtn()
             HideWorkBtn()
+        }
     }
-    func timerOn(){
-        if (countStatus == false)
+    func timerUpOn(){
+        if (isStopwatchActive == false)
         {
-            countStatus = true
-            //timerUp = Timer.scheduledTimer(timeInterval: 1, target: self, selector: timerCounter(), userInfo: nil, repeats: true)
+            isStopwatchActive = true
+            mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerCounter), userInfo: nil, repeats: true)
         }
         
     }
     
-        func timerCounter() -> Void
-        {
-            count = count + 1
-        }
+    @objc func timerCounter() -> Void
+    {
+        timeCounter = timeCounter + 1
+        let time = secondsToHoursMinutesSeconds(seconds: timeCounter)
+        let counterTimeString = makeTimeString(hours: time.0, minutes: time.1, seconds: time.2)
+        stopwatch_Counter.text = counterTimeString
         
-        func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int)
-        {
-            return ((seconds / 3600), ((seconds % 3600)/60),((seconds % 3600) % 60))
+        if isBreakTimerActive {
+            if breakTimeRemaining > 0{
+                breakTimeRemaining -= 1
+            }
+            let timer = secondToMinutesSeconds(seconds: breakTimeRemaining)
+            let timerString = maketimerString(minutes: timer.0, seconds: timer.1)
+            timer_Counter.text = timerString
         }
     }
-    /*func LabelChange(){
-        nameTask.text = "Ini nama Task"
-        priorityTask.text = "Medium Priority"
-        dateTask.text = "8 April 2021"
-        notesTask.text = "asbasbanwpienfio3930jnipvkn3oefjlndc owienoi23ncpiprknvoiwenfowejnfowienwepfwnefpiwekfnewifnkwfowknfdlfknweoflwenfpwfneojlnrpwiknwepfnpfiknweefpwikfnwepfknwfpekfnwpfknfpweifknwepfwnkefpkwenfewpin INI TEST GANTI DOANG"
-    }*/
     
+    func secondsToHoursMinutesSeconds(seconds: Int) -> (Int, Int, Int)
+    {
+        return ((seconds / 3600), ((seconds % 3600)/60),((seconds % 3600) % 60))
+    }
+    
+    func makeTimeString (hours: Int, minutes: Int, seconds: Int) -> String{
+        var counterTimeString = ""
+        counterTimeString += String(format: "%02d", hours)
+        counterTimeString += " : "
+        counterTimeString += String(format: "%02d", minutes)
+        counterTimeString += " : "
+        counterTimeString += String(format: "%02d", seconds)
+        return counterTimeString
+    }
+    
+    //    Timer Break
+    //    Countdown timer
+    //
+    
+    func timerDownReset()
+    {
+        if isBreakTimerActive == true{
+            breakTimeRemaining = 301
+            HideTimer()
+        }
+    }
+    
+    func secondToMinutesSeconds (seconds : Int) -> (Int, Int) {
+        (((seconds % 3600)/60),((seconds % 3600) % 60))
+    }
+    
+    func maketimerString (minutes: Int, seconds: Int) -> String {
+        var timerString = ""
+        timerString += String (format: "%02d", minutes)
+        timerString += String (" : ")
+        timerString += String (format: "%02d", seconds)
+        return timerString
+    }
+    
+    func timerDownFinish()
+    {
+        if isBreakTimerActive == true{
+            isBreakTimerActive = false
+            mainTimer.invalidate()
+            
+        }
+    }
+    
+    
+    
+    /*func timerDownOn()
+     {
+     if(timerStatus == false)
+     {
+     Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (downCounter), userInfo: nil, repeats: true)
+     timerStatus = true
+     }
+     }
+     */
+    
+    
+    /* @objc func downCounter() -> Void
+     {
+     if timeRemaining > 0{
+     timeRemaining -= 1
+     }
+     let timer = secondToMinutesSeconds(seconds: timeRemaining)
+     let timerString = maketimerString(minutes: timer.0, seconds: timer.1)
+     timer_Counter.text = timerString
+     
+     }*/
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
-    }
+     func LabelChange(){
+     nameTask.text = "Ini nama Task"
+     priorityTask.text = "Medium Priority"
+     dateTask.text = "8 April 2021"
+     notesTask.text = "Ini contoh cobain data dummy, belom pake data asli yang dari new task, INI TEST GANTI DOANG"
+     }
+     */
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    
+}
