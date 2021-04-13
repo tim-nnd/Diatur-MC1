@@ -79,6 +79,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="p18-bv-PMt" kind="show" id="j8P-6J-hjI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -95,6 +98,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMs-4Z-YmH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6.1538461538461533" y="83.886255924170612"/>
+        </scene>
+        <!--settingDetailWork-->
+        <scene sceneID="hco-Zw-iCK">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPU-kN-b8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="settingDetailWork" storyboardName="SettingDetail" referencedIdentifier="settingDetailWork" id="p18-bv-PMt" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hxf-sL-Jcd"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="535" y="8"/>
+        </scene>
+        <!--firstSetupBreak-->
+        <scene sceneID="4bi-VT-5dW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UkK-If-r1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="firstSetupBreak" storyboardName="SettingDetail" referencedIdentifier="firstSetupBreak" id="pLr-AB-9vr" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nLh-gJ-jbF"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="640" y="89"/>
         </scene>
     </scenes>
     <resources>

@@ -47,7 +47,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         var title = UILabel()
         if let view = view {
             title = view as! UILabel
-    }
+        }
         title.font = UIFont.systemFont(ofSize: 17)
         title.text = pickerData[row]
         title.textColor = UIColor.systemBlue
