@@ -15,4 +15,13 @@ class Ring {
         self.workTime = workTime
         self.date = date
     }
+    
+    func todayLifeTime() -> Int {
+        let hour = Calendar.current.component(.hour, from: Date())
+        return hour-workTime
+    }
+    
+    func summaryLifeTime() -> Int {
+        return 24-workTime
+    }
 }
