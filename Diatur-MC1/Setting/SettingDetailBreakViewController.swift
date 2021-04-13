@@ -7,12 +7,12 @@
 
 import UIKit
 
-let arrayDataBreakMinuteSetting = ["5","10","15"]
-let arrayDataWorkMinuteSetting = ["15", "30","45","60"]
-
-class SettingDetailBreakViewController: UIViewController {
+class SettingDetailBreakViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     @IBOutlet weak var pickerViewBreakMinute: UIPickerView!
     @IBOutlet weak var pickerViewWorkMinute: UIPickerView!
+    
+    let arrayDataBreakMinuteSetting = ["5","10","15"]
+    let arrayDataWorkMinuteSetting = ["15", "30","45","60"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,7 @@ class SettingDetailBreakViewController: UIViewController {
         pickerViewWorkMinute.dataSource = self
         pickerViewWorkMinute.delegate = self
     }
-}
 
-extension SettingDetailBreakViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -37,8 +35,7 @@ extension SettingDetailBreakViewController: UIPickerViewDataSource {
         }
         return 1
     }
-}
-extension SettingDetailBreakViewController: UIPickerViewDelegate {
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerViewBreakMinute {
             return arrayDataBreakMinuteSetting[row]
@@ -47,5 +44,7 @@ extension SettingDetailBreakViewController: UIPickerViewDelegate {
             return arrayDataWorkMinuteSetting[row]
         }
         return ""
+    }
+    @IBAction func doneButton(_ sender: UIButton) {
     }
 }
