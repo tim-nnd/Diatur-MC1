@@ -16,6 +16,10 @@ class ScheduleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Navigation Bar
+        navigationItem.title = "Schedule"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTapped))
 
         // Do any additional setup after loading the view.
         
@@ -32,8 +36,8 @@ class ScheduleViewController: UIViewController {
         self.taskList.reloadData()
     }
     
-    @IBAction func addButtonTouch(_ sender: UIButton) {
-        
+    @objc func addTapped(){
+        print("userTap")
     }
     
     /*
