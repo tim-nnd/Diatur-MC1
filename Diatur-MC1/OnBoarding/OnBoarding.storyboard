@@ -11,7 +11,7 @@
         <!--OnboardingVC-->
         <scene sceneID="20z-e0-L8X">
             <objects>
-                <viewController storyboardIdentifier="onBoarding" id="UGD-nJ-h87" customClass="OnboardingVC" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="onBoardingVC" storyboardIdentifier="onBoardingVC" id="UGD-nJ-h87" customClass="OnboardingVC" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pfC-Xt-RfT">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,6 +35,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="hJx-dh-CiJ" kind="presentation" modalPresentationStyle="fullScreen" id="xF0-yk-hgB"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnl-Uj-kSa">
                                 <rect key="frame" x="8" y="176" width="374" height="342"/>
@@ -69,6 +72,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aha-Vb-oqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="169.23076923076923" y="139.33649289099526"/>
+        </scene>
+        <!--FirstSetup-->
+        <scene sceneID="2Rr-mR-hCl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FirstSetup" id="hJx-dh-CiJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gI2-8W-TyK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915" y="128"/>
         </scene>
     </scenes>
     <resources>

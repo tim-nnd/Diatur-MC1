@@ -25,7 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
 
         */
+        
+        // **** For OnBoarding *****
+        
+        let story = UIStoryboard(name: "OnBoarding", bundle:nil)
+        let vc = story.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingVC
+        UIApplication.shared.windows.first?.rootViewController = vc
+        UIApplication.shared.windows.first?.makeKeyAndVisible()
 
+        
         /*
         
 
@@ -43,12 +51,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
  */
         
         // ****FOR FIRST SETUP***
-        
+        /*
          let firstSetupStoryBoard = UIStoryboard.init(name: "FirstSetup", bundle: nil)
         let firstSetupViewController = firstSetupStoryBoard.instantiateViewController(withIdentifier: "navigationController") as! UINavigationController
         self.window?.rootViewController = firstSetupViewController
         self.window?.makeKeyAndVisible()
-         
+         */
         
         // ****
         
