@@ -19,6 +19,7 @@
 		1CA41E0F261EF30900EF833D /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA41E0E261EF30900EF833D /* ScheduleViewController.swift */; };
 		1CA41E12261EF7A300EF833D /* Summary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA41E11261EF7A300EF833D /* Summary.storyboard */; };
 		1CA41E15261EF8A900EF833D /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA41E14261EF8A900EF833D /* SummaryViewController.swift */; };
+		1CCC17662626CC13002D8EDD /* NewTaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC17652626CC13002D8EDD /* NewTaskDelegate.swift */; };
 		3902A865261EDD1600B2CE76 /* TaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */; };
 		3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */; };
 		AB316A09261F07EE00433D26 /* FirstSetupBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */; };
@@ -57,6 +58,7 @@
 		1CA41E0E261EF30900EF833D /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		1CA41E11261EF7A300EF833D /* Summary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Summary.storyboard; sourceTree = "<group>"; };
 		1CA41E14261EF8A900EF833D /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		1CCC17652626CC13002D8EDD /* NewTaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskDelegate.swift; sourceTree = "<group>"; };
 		3902A864261EDD1600B2CE76 /* TaskDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskDetail.storyboard; sourceTree = "<group>"; };
 		3902A86A261EE1EF00B2CE76 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		AB316A08261F07EE00433D26 /* FirstSetupBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSetupBreakViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				E0020EF8261DE15B00E0DBCA /* NewTaskVC.swift */,
+				1CCC17652626CC13002D8EDD /* NewTaskDelegate.swift */,
 				E0020EFF261E417700E0DBCA /* NewTask.storyboard */,
 			);
 			path = NewTask;
@@ -312,6 +315,7 @@
 				ABABB7852620110C0001993C /* SettingDetailViewController.swift in Sources */,
 				ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */,
 				E0020EF9261DE15B00E0DBCA /* NewTaskVC.swift in Sources */,
+				1CCC17662626CC13002D8EDD /* NewTaskDelegate.swift in Sources */,
 				1C82714D261C62E5003A1B71 /* AppDelegate.swift in Sources */,
 				C065B7422620A22E004A9121 /* TestingGithubGakStashedViewController.swift in Sources */,
 				3902A86B261EE1EF00B2CE76 /* TaskDetailViewController.swift in Sources */,

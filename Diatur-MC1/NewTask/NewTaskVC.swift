@@ -9,6 +9,8 @@ import UIKit
 
 class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var delegate: NewTaskDelegate?
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var taskName: UITextField!
     @IBOutlet weak var priority: UIPickerView!
@@ -18,6 +20,13 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     var pickerData: [String] = ["High", "Medium", "Low"]
     
     var parameterEdit: Int = 0
+    
+//    var taskNameData = ""
+    var priorityData = 0
+//    var dateData = Date()
+//    var noteData = ""
+    
+    var taskToBeEdited: Task?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +62,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    
+        priorityData = row
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -70,33 +79,42 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func datePickerChanged(_ sender: Any) {
-        let dateFormatter = DateFormatter()
+//        let dateFormatter = DateFormatter()
+//
+//        dateFormatter.dateStyle = DateFormatter.Style.long
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//
+//        _ = dateFormatter.string(from: datePicker.date)
         
-        dateFormatter.dateStyle = DateFormatter.Style.long
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        _ = dateFormatter.string(from: datePicker.date)
+//        dateData = datePicker.date
     }
     
     func editData() {
-        let noteData = "Some some some Note"
-        let taskNameData = "Task A"
-        let priorityData = 2
-        let dateData = "2021-04-20"
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateObj = dateFormatter.date(from: dateData)
+        taskName.text = taskToBeEdited?.name
+        priority.selectRow(taskToBeEdited?.priority ?? 0, inComponent: 0, animated: true)
+        datePicker.date = taskToBeEdited?.date ?? Date()
+        note.text = taskToBeEdited?.notes
         
-        note.text = noteData
-        taskName.text = taskNameData
-        
-        priority.selectRow(priorityData, inComponent: 0, animated: true)
-        
-        datePicker.date = dateObj!
         navBar.title = "Edit"
     }
     
+    @IBAction func savePressed(_ sender: UIBarButtonItem) {
+        
+        switch parameterEdit {
+        case 1:
+            taskToBeEdited?.name = taskName.text ?? "Untitled Task"
+            taskToBeEdited?.priority = priorityData
+            taskToBeEdited?.date = datePicker.date
+            taskToBeEdited?.notes = note.text
+        default:
+            TaskDatabase.taskArray.append(Task(name: taskName.text ?? "Untitled Task", priority: priorityData, date: datePicker.date, notes: note.text))
+        }
+        
+        delegate?.taskAdded()
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

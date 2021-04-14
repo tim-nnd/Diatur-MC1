@@ -25,6 +25,8 @@ class OverviewViewController: UIViewController {
     var labelWorkHourText = 0
     var ListViewSorted: [Task] = []
     
+    var taskToBeEdited: Task?
+    
     var inputDariFirstTime = 8
     
     var testingBaru = "Test Coding bareng Azka"
@@ -209,7 +211,7 @@ class OverviewViewController: UIViewController {
     
     func workCircleAnimation(){
         
-        var fromValues = position
+        let fromValues = position
         
         let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
         
@@ -351,6 +353,12 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         let editButtonAction = UIContextualAction(style: .normal, title: "", handler: { (actions, editView, onComplete) in
             print("edit")
             
+            for n in 0...(TaskDatabase.taskArray.count-1) {
+                if TaskDatabase.taskArray[n].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[n].priority == self.ListViewSorted[indexPath.row].priority {
+                    self.taskToBeEdited = TaskDatabase.taskArray[n]
+                }
+            }
+            
             self.performSegue(withIdentifier: "editTask", sender: self)
         })
         
@@ -369,9 +377,12 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         if segue.identifier == "editTask"{
             let destinationVC = segue.destination as! NewTaskVC
             destinationVC.parameterEdit = 1
+            destinationVC.taskToBeEdited = self.taskToBeEdited
         }
         
-        
+        if let destinationVC = segue.destination as? NewTaskVC {
+            destinationVC.delegate = self
+        }
         
     }
     
@@ -379,5 +390,10 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
 }
 
-
+extension OverviewViewController: NewTaskDelegate {
+    func taskAdded() {
+        arraySort()
+        ListTask.reloadData()
+    }
+}
 
