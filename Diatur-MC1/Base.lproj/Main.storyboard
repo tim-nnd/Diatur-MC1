@@ -150,11 +150,27 @@
                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Working hour over" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="S6E-hd-0Np">
+                                        <rect key="frame" x="38" y="99" width="142" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LIFE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2s-yq-qaf">
+                                        <rect key="frame" x="80" y="45" width="60" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="tintColor" systemColor="quaternaryLabelColor"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="nM7-1p-Pdx" appends="YES" id="Cpu-7P-Rtt"/>
+                                    <outletCollection property="gestureRecognizers" destination="rEN-zS-UrE" appends="YES" id="imQ-6q-qbq"/>
+                                    <outletCollection property="gestureRecognizers" destination="ISk-lg-HSn" appends="YES" id="qzx-tg-sCl"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -177,17 +193,33 @@
                     <connections>
                         <outlet property="ListTask" destination="p97-Lm-SBL" id="UhO-dm-h4O"/>
                         <outlet property="circleView" destination="hCt-oE-uT6" id="GUy-CB-hyi"/>
+                        <outlet property="hoursLabel" destination="fQq-8g-SqI" id="IsI-1t-uj9"/>
                         <outlet property="labelWorkHour" destination="sgL-Al-pH5" id="RuK-Gt-rHX"/>
+                        <outlet property="lifeLabel" destination="d2s-yq-qaf" id="fZB-LN-i4c"/>
+                        <outlet property="pageControl" destination="Aj1-D6-AM4" id="Bl1-AP-qfD"/>
                         <outlet property="todayListTitle" destination="Bm9-my-SJz" id="MQQ-fd-CCe"/>
+                        <outlet property="workLabel" destination="hqq-J0-0Yx" id="GAV-Bh-rfU"/>
+                        <outlet property="workingLIfe" destination="S6E-hd-0Np" id="zGv-SO-l8r"/>
                         <segue destination="5Im-R7-rwQ" kind="presentation" identifier="addToAdd" id="Wqb-2S-2Cx"/>
+                        <segue destination="5Im-R7-rwQ" kind="presentation" identifier="editTask" id="Nzf-q8-bYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S1C-M4-Qlj" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="rEN-zS-UrE">
+                    <connections>
+                        <action selector="userSwipeLeft:" destination="5rY-iH-6pg" id="IuJ-JU-9g5"/>
+                    </connections>
+                </swipeGestureRecognizer>
                 <tapGestureRecognizer id="nM7-1p-Pdx">
                     <connections>
                         <action selector="userTap:" destination="5rY-iH-6pg" id="XEq-PH-zUI"/>
                     </connections>
                 </tapGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="ISk-lg-HSn">
+                    <connections>
+                        <action selector="userSwipeKanan:" destination="5rY-iH-6pg" id="Wim-Z7-wxy"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2718.4615384615386" y="79.620853080568722"/>
         </scene>
@@ -235,6 +267,47 @@
             </objects>
             <point key="canvasLocation" x="3392" y="171"/>
         </scene>
+        <!--Scroll View Testing View Controller-->
+        <scene sceneID="WJX-o9-icp">
+            <objects>
+                <viewController id="3Xg-J5-gBh" customClass="ScrollViewTestingViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cft-Pv-VPP">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9CM-mL-wgG">
+                                <rect key="frame" x="85" y="98" width="220" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="8D3-Eh-81a"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="p89-uq-wjQ"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="drd-6f-6EV" appends="YES" id="il7-6Q-TmN"/>
+                                    <outletCollection property="gestureRecognizers" destination="kR8-oY-xMi" appends="YES" id="Srv-lK-19Q"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oSl-Yg-IlV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="circleView" destination="9CM-mL-wgG" id="4pM-Qx-3F9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a9v-U1-FsU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="drd-6f-6EV">
+                    <connections>
+                        <action selector="userSwipe:" destination="3Xg-J5-gBh" id="e4R-cK-e9p"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="kR8-oY-xMi">
+                    <connections>
+                        <action selector="swipeLeft:" destination="3Xg-J5-gBh" id="YMD-0T-hl1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2562" y="916"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="B08-YV-oUf">
             <objects>
@@ -275,6 +348,9 @@
             <point key="canvasLocation" x="1789.2307692307693" y="79.620853080568722"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Nzf-q8-bYD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="circle.dashed.inset.fill" catalog="system" width="128" height="121"/>

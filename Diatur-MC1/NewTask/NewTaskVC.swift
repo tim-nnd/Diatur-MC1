@@ -17,14 +17,27 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     var pickerData: [String] = ["High", "Medium", "Low"]
     
+    var parameterEdit: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(parameterEdit)
         
         self.priority.delegate = self
         self.priority.dataSource = self
         
-        /* Call this to edit the task */
-        // editData()
+        if parameterEdit == 1 {
+            editData()
+        }
+       
+        
+    }
+    
+  
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        parameterEdit = 0
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -77,7 +90,9 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         
         note.text = noteData
         taskName.text = taskNameData
-        priority.selectRow(priorityData, inComponent: 1, animated: true)
+        
+        priority.selectRow(priorityData, inComponent: 0, animated: true)
+        
         datePicker.date = dateObj!
         navBar.title = "Edit"
     }

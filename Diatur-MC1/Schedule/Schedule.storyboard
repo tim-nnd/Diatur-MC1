@@ -126,7 +126,7 @@
         <!--TaskDetail-->
         <scene sceneID="hBc-0r-jjI">
             <objects>
-                <viewControllerPlaceholder storyboardName="TaskDetail" id="1zp-Tu-dB1" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="taskDetail" storyboardName="TaskDetail" id="1zp-Tu-dB1" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I0-cD-PiA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2512.3076923076924" y="139.33649289099526"/>
