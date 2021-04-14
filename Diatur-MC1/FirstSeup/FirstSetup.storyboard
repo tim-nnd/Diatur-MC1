@@ -161,7 +161,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonBreak:" destination="w48-yy-HIj" eventType="touchUpInside" id="Un7-zg-DWQ"/>
-                                    <segue destination="rXi-OD-a1N" kind="show" id="G9d-wF-z3f"/>
+                                    <segue destination="rXi-OD-a1N" kind="presentation" modalPresentationStyle="fullScreen" id="G9d-wF-z3f"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="J8H-jC-RFI">
@@ -179,7 +179,7 @@
                                 <connections>
                                     <action selector="dontSetButton:" destination="w48-yy-HIj" eventType="touchUpInside" id="09T-XD-vSR"/>
                                     <action selector="dontSetButton:" destination="fye-Oz-yPN" eventType="touchUpInside" id="FNh-da-4MQ"/>
-                                    <segue destination="rXi-OD-a1N" kind="show" id="hDK-m0-NPW"/>
+                                    <segue destination="rXi-OD-a1N" kind="presentation" modalPresentationStyle="fullScreen" id="hDK-m0-NPW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="1583.0769230769231" y="162.79620853080567"/>
         </scene>
-        <!--OverviewVC-->
+        <!--Main-->
         <scene sceneID="hA6-Yi-B7x">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="OverviewVC" id="rXi-OD-a1N" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" id="rXi-OD-a1N" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="i5k-LN-Xix"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AjM-VB-vYr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,7 +228,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G9d-wF-z3f"/>
+        <segue reference="hDK-m0-NPW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -40,6 +40,8 @@ class TaskDetailViewController: UIViewController {
     
     var titleLabel: String = ""
     var prorityLabelIndicator: Int = 0
+    var DescriptionTask: String?
+    var DateDariAzka: Date?
     
 
     
@@ -328,16 +330,15 @@ class TaskDetailViewController: UIViewController {
      
      }*/
     
-    
     /*
+    
      func LabelChange(){
-     nameTask.text = "Ini nama Task"
-     priorityTask.text = "Medium Priority"
+     
      dateTask.text = "8 April 2021"
      notesTask.text = "Ini contoh cobain data dummy, belom pake data asli yang dari new task, INI TEST GANTI DOANG"
      }
-     */
-    
+     
+    */
     
     /*
      // MARK: - Navigation
