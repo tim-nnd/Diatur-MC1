@@ -87,6 +87,7 @@ class OverviewViewController: UIViewController {
         pageControl.currentPage = 0
         makeWorkCircle()
         
+        ListTask.isUserInteractionEnabled = true
         ListTask.reloadData()
         
     }
@@ -111,7 +112,7 @@ class OverviewViewController: UIViewController {
         ListTask.isUserInteractionEnabled = false
         ListTask.reloadData()
         
-    }
+   }
     
     // Testing purposes
     @IBAction func userTap(_ sender: UIGestureRecognizer) {
@@ -165,6 +166,7 @@ class OverviewViewController: UIViewController {
         
         
     }
+    
     func makeWorkCircle(){
         
         let centre = CGPoint(x: circleView.frame.width/2, y: circleView.frame.height/2)
@@ -297,6 +299,8 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
                 cells.priorityColor.tintColor = .white
                 cells.priorityLabel.text = ""
                 
+                cells.accessoryType = .none
+                
                 return cells
             }
             else{
@@ -337,6 +341,7 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
             
             cell.titleLabel = ListViewSorted[indexPath.row].name
             cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
+            
             
             ListTask.deselectRow(at: indexPath, animated: true)
             
