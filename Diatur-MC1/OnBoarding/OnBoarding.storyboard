@@ -35,6 +35,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="MLr-5M-cbY" kind="presentation" modalPresentationStyle="fullScreen" id="I7r-dN-i7v"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnl-Uj-kSa">
                                 <rect key="frame" x="8" y="176" width="374" height="342"/>
@@ -69,6 +72,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aha-Vb-oqM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="169.23076923076923" y="139.33649289099526"/>
+        </scene>
+        <!--FirstSetup-->
+        <scene sceneID="QpP-VM-moA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FirstSetup" id="MLr-5M-cbY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="veq-md-yQi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e1z-km-t4K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="701" y="246"/>
         </scene>
     </scenes>
     <resources>
