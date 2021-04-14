@@ -21,10 +21,12 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     
     var parameterEdit: Int = 0
     
-    var taskNameData = ""
+//    var taskNameData = ""
     var priorityData = 0
-    var dateData = Date()
-    var noteData = ""
+//    var dateData = Date()
+//    var noteData = ""
+    
+    var taskToBeEdited: Task?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,33 +86,30 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
 //
 //        _ = dateFormatter.string(from: datePicker.date)
         
-        dateData = datePicker.date
+//        dateData = datePicker.date
     }
     
     func editData() {
-        let noteData = "Some some some Note"
-        let taskNameData = "Task A"
-        let priorityData = 2
-        let dateData = "2021-04-20"
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateObj = dateFormatter.date(from: dateData)
+        taskName.text = taskToBeEdited?.name
+        priority.selectRow(taskToBeEdited?.priority ?? 0, inComponent: 0, animated: true)
+        datePicker.date = taskToBeEdited?.date ?? Date()
+        note.text = taskToBeEdited?.notes
         
-        note.text = noteData
-        taskName.text = taskNameData
-        
-        priority.selectRow(priorityData, inComponent: 0, animated: true)
-        
-        datePicker.date = dateObj!
         navBar.title = "Edit"
     }
     
     @IBAction func savePressed(_ sender: UIBarButtonItem) {
-        taskNameData = taskName.text ?? "Untitled Task"
-        noteData = note.text
         
-        TaskDatabase.taskArray.append(Task(name: taskNameData, priority: priorityData, date: dateData, notes: noteData))
+        switch parameterEdit {
+        case 1:
+            taskToBeEdited?.name = taskName.text ?? "Untitled Task"
+            taskToBeEdited?.priority = priorityData
+            taskToBeEdited?.date = datePicker.date
+            taskToBeEdited?.notes = note.text
+        default:
+            TaskDatabase.taskArray.append(Task(name: taskName.text ?? "Untitled Task", priority: priorityData, date: datePicker.date, notes: note.text))
+        }
         
         delegate?.taskAdded()
         
