@@ -9,6 +9,21 @@ import Foundation
 
 struct TaskDatabase {
     static var taskArray: [Task] = [
+//        Tanggal 13
+        Task(name: "Create Storyboard", priority: 0, date: {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            let dateTime = formatter.date(from: "2021/04/13 12:12")!
+            return dateTime
+        }(), notes: "Create the storyboards needed for the project", isCompleted: true),
+        
+        Task(name: "Insert UI Elements", priority: 1, date: {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd HH:mm"
+            let dateTime = formatter.date(from: "2021/04/13 12:12")!
+            return dateTime
+        }(), notes: "Insert the UI Elements to the storyboards", isCompleted: true),
+        
 //        Tanggal 14
         Task(name: "Code DatePicker", priority: 0, date: {
             let formatter = DateFormatter()
@@ -95,13 +110,7 @@ struct TaskDatabase {
             formatter.dateFormat = "yyyy-MM-dd HH:mm"
             let dateTime = formatter.date(from: "2021/04/16 17:12")!
             return dateTime
-        }(), notes: "Ordering foods for office dinner party"),
-        
-        Task(name: "Ngoding Dulu", priority: 0),
-        Task(name: "Ahayy Ngoding", priority: 2),
-        Task(name: "Lagi MC1.2 Brooow", priority: 1),
-        Task(name: "LAGI UTS NICH", priority: 1),
-        Task(name: "Create UI", priority: 0)
+        }(), notes: "Ordering foods for office dinner party")
     ]
 }
 

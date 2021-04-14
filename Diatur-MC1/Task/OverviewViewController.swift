@@ -347,8 +347,10 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
         
         
-        cell.titleLabel = ListViewSorted[indexPath.row].name
-        cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
+//        cell.titleLabel = ListViewSorted[indexPath.row].name
+//        cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
+        
+        cell.activeTask = ListViewSorted[indexPath.row]
         
         
         ListTask.deselectRow(at: indexPath, animated: true)

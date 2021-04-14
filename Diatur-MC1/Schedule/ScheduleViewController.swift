@@ -54,6 +54,8 @@ class ScheduleViewController: UIViewController {
             destinationVC.parameterEdit = 1
             destinationVC.taskToBeEdited = self.taskToBeEdited
         }
+        
+        
     }
     
     /*
@@ -128,8 +130,10 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
         
-        cell.titleLabel = sortedData[indexPath.row].name
-        cell.prorityLabelIndicator = sortedData[indexPath.row].priority
+//        cell.titleLabel = sortedData[indexPath.row].name
+//        cell.prorityLabelIndicator = sortedData[indexPath.row].priority
+
+        cell.activeTask = sortedData[indexPath.row]
         
         taskList.deselectRow(at: indexPath, animated: true)
         

@@ -36,7 +36,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+
                                     <segue destination="hJx-dh-CiJ" kind="presentation" modalPresentationStyle="fullScreen" id="xF0-yk-hgB"/>
+
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnl-Uj-kSa">
@@ -74,12 +76,14 @@
             <point key="canvasLocation" x="169.23076923076923" y="139.33649289099526"/>
         </scene>
         <!--FirstSetup-->
+
         <scene sceneID="2Rr-mR-hCl">
             <objects>
                 <viewControllerPlaceholder storyboardName="FirstSetup" id="hJx-dh-CiJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gI2-8W-TyK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="915" y="128"/>
+
         </scene>
     </scenes>
     <resources>
