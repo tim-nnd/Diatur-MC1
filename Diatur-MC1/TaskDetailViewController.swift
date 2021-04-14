@@ -218,7 +218,8 @@ class TaskDetailViewController: UIViewController {
     var mainTimer: Timer = Timer()
     var timeCounter: Int = 0
     var isStopwatchActive:Bool = false
-    var breakTimeRemaining = 301
+//    var breakTimeRemaining = 301
+    var breakTimeRemaining = (Setting.breakMinute*60)+1
     var isBreakTimerActive = false
 //    var breakTimer: Timer = Timer()
     
@@ -280,7 +281,8 @@ class TaskDetailViewController: UIViewController {
     func timerDownReset()
     {
         if isBreakTimerActive == true{
-            breakTimeRemaining = 301
+//            breakTimeRemaining = 301
+            breakTimeRemaining = (Setting.breakMinute*60)+1
             HideTimer()
         }
     }
