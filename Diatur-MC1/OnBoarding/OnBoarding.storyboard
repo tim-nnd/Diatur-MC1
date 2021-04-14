@@ -11,7 +11,7 @@
         <!--OnboardingVC-->
         <scene sceneID="20z-e0-L8X">
             <objects>
-                <viewController restorationIdentifier="onBoardingVC" storyboardIdentifier="onBoardingVC" id="UGD-nJ-h87" customClass="OnboardingVC" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="onBoardingVC" id="UGD-nJ-h87" customClass="OnboardingVC" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pfC-Xt-RfT">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // **** For OnBoarding *****
         
         let story = UIStoryboard(name: "OnBoarding", bundle:nil)
-        let vc = story.instantiateViewController(withIdentifier: "OnboardingVC") as! OnboardingVC
+        let vc = story.instantiateViewController(withIdentifier: "onBoardingVC") as! OnboardingVC
         UIApplication.shared.windows.first?.rootViewController = vc
         UIApplication.shared.windows.first?.makeKeyAndVisible()
 
