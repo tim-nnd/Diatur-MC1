@@ -35,24 +35,17 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var timerTitle: UILabel!
     
     @IBOutlet weak var breakLabel: UILabel!
-
-    // Dapet Value dari Overview (Dummy)
     
-    var titleLabel: String = ""
-    var prorityLabelIndicator: Int = 0
-    
-
+    var activeTask: Task?
     
     @IBOutlet weak var timer_Counter: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameTask.text = titleLabel
+        nameTask.text = activeTask?.name
         
-       
-        
-        switch prorityLabelIndicator {
+        switch activeTask?.priority {
         
         case 0:
             pirorityImage.tintColor = #colorLiteral(red: 0.9255061746, green: 0.3098220527, blue: 0.2627460957, alpha: 1)
@@ -70,6 +63,15 @@ class TaskDetailViewController: UIViewController {
            return
             
         }
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.long
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        
+        dateTask.text = dateFormatter.string(from: activeTask?.date ?? Date())
+        
+        notesTask.text = activeTask?.notes
 
         // Do any additional setup after loading the view.
     }
@@ -115,7 +117,7 @@ class TaskDetailViewController: UIViewController {
                 nav.popViewController(animated: true)
             }
                 
-            
+            self.activeTask?.isCompleted = true
         }))
         
         self.present(alert, animated: true, completion: nil)
@@ -216,7 +218,8 @@ class TaskDetailViewController: UIViewController {
     var mainTimer: Timer = Timer()
     var timeCounter: Int = 0
     var isStopwatchActive:Bool = false
-    var breakTimeRemaining = 301
+//    var breakTimeRemaining = 301
+    var breakTimeRemaining = (Setting.breakMinute*60)+1
     var isBreakTimerActive = false
 //    var breakTimer: Timer = Timer()
     
@@ -278,7 +281,8 @@ class TaskDetailViewController: UIViewController {
     func timerDownReset()
     {
         if isBreakTimerActive == true{
-            breakTimeRemaining = 301
+//            breakTimeRemaining = 301
+            breakTimeRemaining = (Setting.breakMinute*60)+1
             HideTimer()
         }
     }
@@ -328,16 +332,15 @@ class TaskDetailViewController: UIViewController {
      
      }*/
     
-    
     /*
+    
      func LabelChange(){
-     nameTask.text = "Ini nama Task"
-     priorityTask.text = "Medium Priority"
+     
      dateTask.text = "8 April 2021"
      notesTask.text = "Ini contoh cobain data dummy, belom pake data asli yang dari new task, INI TEST GANTI DOANG"
      }
-     */
-    
+     
+    */
     
     /*
      // MARK: - Navigation

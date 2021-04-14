@@ -26,7 +26,11 @@
                                                 <action selector="cancelPressed:" destination="cQd-UL-kNc" id="T6U-Nj-RKE"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iGZ-hj-DI1"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="iGZ-hj-DI1">
+                                            <connections>
+                                                <action selector="savePressed:" destination="cQd-UL-kNc" id="W83-RM-osw"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

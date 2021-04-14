@@ -23,9 +23,16 @@ class OverviewViewController: UIViewController {
     
     var cellID = "listCell"
     var labelWorkHourText = 0
+    
+    
     var ListViewSorted: [Task] = []
     
+    
+    var taskToBeEdited: Task?
+    
+    
     var inputDariFirstTime = 8
+    var tableViewParameters: Bool = false
     
     var testingBaru = "Test Coding bareng Azka"
     
@@ -49,6 +56,7 @@ class OverviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         workingLIfe.isHidden = true
         lifeLabel.isHidden = true
         
@@ -67,6 +75,7 @@ class OverviewViewController: UIViewController {
         
         arraySort()
         ListTask.reloadData()
+        labelWorkHourText = 0 
         
     }
     
@@ -78,9 +87,14 @@ class OverviewViewController: UIViewController {
         hoursLabel.isHidden = false
         workLabel.isHidden = false
         labelWorkHour.isHidden = false
+        tableViewParameters = false
         
         pageControl.currentPage = 0
         makeWorkCircle()
+        
+        ListTask.isUserInteractionEnabled = true
+        ListTask.reloadData()
+        
         
         
     }
@@ -88,13 +102,12 @@ class OverviewViewController: UIViewController {
     @IBAction func userSwipeLeft(_ sender: UISwipeGestureRecognizer) {
         
         print("userKiri")
-        
-        
         workingLIfe.isHidden = false
         lifeLabel.isHidden = false
         hoursLabel.isHidden = true
         workLabel.isHidden = true
         labelWorkHour.isHidden = true
+        tableViewParameters = true
         
         
         pageControl.currentPage = 1
@@ -102,6 +115,9 @@ class OverviewViewController: UIViewController {
         
         makeLifeCircle()
         lifeCircleAnimation()
+        
+        ListTask.isUserInteractionEnabled = false
+        ListTask.reloadData()
         
     }
     
@@ -157,6 +173,7 @@ class OverviewViewController: UIViewController {
         
         
     }
+    
     func makeWorkCircle(){
         
         let centre = CGPoint(x: circleView.frame.width/2, y: circleView.frame.height/2)
@@ -199,7 +216,7 @@ class OverviewViewController: UIViewController {
         animateCircle.toValue = 1
         animateCircle.fromValue = 0
         
-        animateCircle.duration = 10
+        animateCircle.duration = 5
         
         circle.strokeEnd = 1
         
@@ -209,7 +226,7 @@ class OverviewViewController: UIViewController {
     
     func workCircleAnimation(){
         
-        var fromValues = position
+        let fromValues = position
         
         let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
         
@@ -264,40 +281,65 @@ class OverviewViewController: UIViewController {
 
 extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return ListViewSorted.count
+        if tableViewParameters{
+            
+            return TipsnTrick.TipsArray.count
+        }
+        else{
+            
+            return ListViewSorted.count
+        }
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailedTaskTableViewCell
-        
-        let dataDummy = ListViewSorted[indexPath.row]
-        
-        
-        
-        switch dataDummy.priority {
-        case 0:
-            priorityLabel = "High"
-            cell.priorityColor.tintColor = #colorLiteral(red: 0.9255061746, green: 0.3098220527, blue: 0.2627460957, alpha: 1)
+        if tableViewParameters{
+            let cells = ListTask.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! DetailedTaskTableViewCell
             
-        case 1:
-            priorityLabel = "Medium"
-            cell.priorityColor.tintColor = #colorLiteral(red: 0.976410687, green: 0.8706294894, blue: 0.3489934802, alpha: 1)
-        case 2:
-            priorityLabel = "Low"
-            cell.priorityColor.tintColor = #colorLiteral(red: 0.6469622254, green: 0.7765128613, blue: 0.694031775, alpha: 1)
-        default:
-            priorityLabel = ""
+            //
+            cells.taskName.text = TipsnTrick.TipsArray[indexPath.row]
+            
+            cells.priorityColor.tintColor = .white
+            cells.priorityLabel.text = ""
+            
+            cells.accessoryType = .none
+            
+            return cells
+        }
+        else{
+            
+            let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailedTaskTableViewCell
+            
+            let dataDummy = ListViewSorted[indexPath.row]
+            
+            switch dataDummy.priority {
+            case 0:
+                priorityLabel = "High"
+                cell.priorityColor.tintColor = #colorLiteral(red: 0.9255061746, green: 0.3098220527, blue: 0.2627460957, alpha: 1)
+                
+            case 1:
+                priorityLabel = "Medium"
+                cell.priorityColor.tintColor = #colorLiteral(red: 0.976410687, green: 0.8706294894, blue: 0.3489934802, alpha: 1)
+            case 2:
+                priorityLabel = "Low"
+                cell.priorityColor.tintColor = #colorLiteral(red: 0.6469622254, green: 0.7765128613, blue: 0.694031775, alpha: 1)
+            default:
+                priorityLabel = ""
+            }
+            
+            cell.taskName.text = dataDummy.name
+            cell.priorityLabel.text = "Priority \(priorityLabel)"
+            
+            cell.accessoryType = .disclosureIndicator
+            
+            return cell
+            
         }
         
-        cell.taskName.text = dataDummy.name
-        cell.priorityLabel.text = "Priority \(priorityLabel)"
-        
-        
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -305,8 +347,11 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
         
         
-        cell.titleLabel = ListViewSorted[indexPath.row].name
-        cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
+//        cell.titleLabel = ListViewSorted[indexPath.row].name
+//        cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
+        
+        cell.activeTask = ListViewSorted[indexPath.row]
+        
         
         ListTask.deselectRow(at: indexPath, animated: true)
         
@@ -351,6 +396,12 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         let editButtonAction = UIContextualAction(style: .normal, title: "", handler: { (actions, editView, onComplete) in
             print("edit")
             
+            for n in 0...(TaskDatabase.taskArray.count-1) {
+                if TaskDatabase.taskArray[n].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[n].priority == self.ListViewSorted[indexPath.row].priority {
+                    self.taskToBeEdited = TaskDatabase.taskArray[n]
+                }
+            }
+            
             self.performSegue(withIdentifier: "editTask", sender: self)
         })
         
@@ -362,16 +413,19 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         return config
         
         
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "editTask"{
             let destinationVC = segue.destination as! NewTaskVC
             destinationVC.parameterEdit = 1
+            destinationVC.taskToBeEdited = self.taskToBeEdited
         }
         
-        
+        if let destinationVC = segue.destination as? NewTaskVC {
+            destinationVC.delegate = self
+        }
         
     }
     
@@ -380,4 +434,11 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
 }
 
 
+
+extension OverviewViewController: NewTaskDelegate {
+    func taskAdded() {
+        arraySort()
+        ListTask.reloadData()
+    }
+}
 

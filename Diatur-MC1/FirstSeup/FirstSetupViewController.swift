@@ -13,15 +13,20 @@ class FirstSetupViewController: UIViewController, UIPickerViewDataSource, UIPick
     
     let arrayDataWorkHour = ["1", "2","3","4","5","6","7","8","9","10","11","12"]
     
+    var selectedRow = 7
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerViewWorkHour.dataSource = self
         pickerViewWorkHour.delegate = self
+        
+        pickerViewWorkHour.selectRow(7, inComponent: 0, animated: false)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arrayDataWorkHour.count
     }
@@ -29,7 +34,15 @@ class FirstSetupViewController: UIViewController, UIPickerViewDataSource, UIPick
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return arrayDataWorkHour[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRow = row
+    }
 
     @IBAction func nextButton(_ sender: UIButton) {
+
+        Setting.workHour = Int(arrayDataWorkHour[selectedRow]) ?? 8
+        print(Setting.workHour)
+
     }
 }

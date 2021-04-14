@@ -14,8 +14,14 @@ class ScheduleViewController: UIViewController {
     
     var sortedData: [Task] = []
     
+    var taskToBeEdited: Task?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Navigation Bar
+        navigationItem.title = "Schedule"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(addTapped))
 
         // Do any additional setup after loading the view.
         
@@ -32,7 +38,23 @@ class ScheduleViewController: UIViewController {
         self.taskList.reloadData()
     }
     
-    @IBAction func addButtonTouch(_ sender: UIButton) {
+    @objc func addTapped(){
+        
+        performSegue(withIdentifier: "toAdd", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? NewTaskVC {
+            destinationVC.delegate = self
+        }
+        
+        if segue.identifier == "editTask"{
+            let destinationVC = segue.destination as! NewTaskVC
+            destinationVC.parameterEdit = 1
+            destinationVC.taskToBeEdited = self.taskToBeEdited
+        }
+        
         
     }
     
@@ -108,8 +130,10 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
         
-        cell.titleLabel = sortedData[indexPath.row].name
-        cell.prorityLabelIndicator = sortedData[indexPath.row].priority
+//        cell.titleLabel = sortedData[indexPath.row].name
+//        cell.prorityLabelIndicator = sortedData[indexPath.row].priority
+
+        cell.activeTask = sortedData[indexPath.row]
         
         taskList.deselectRow(at: indexPath, animated: true)
         
@@ -146,6 +170,13 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         
         let editButtonAction = UIContextualAction(style: .normal, title: "", handler: {(actions, editView, onComplete) in
             
+            for n in 0...(TaskDatabase.taskArray.count-1) {
+                if TaskDatabase.taskArray[n].name == self.sortedData[indexPath.row].name && TaskDatabase.taskArray[n].priority == self.sortedData[indexPath.row].priority {
+                    self.taskToBeEdited = TaskDatabase.taskArray[n]
+                }
+            }
+            
+            self.performSegue(withIdentifier: "editTask", sender: self)
         })
         
         editButtonAction.image = UIImage(systemName: "pencil")
@@ -154,5 +185,12 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         
         config.performsFirstActionWithFullSwipe = true
         return config
+    }
+}
+
+extension ScheduleViewController: NewTaskDelegate {
+    func taskAdded() {
+        getSortedData()
+        self.taskList.reloadData()
     }
 }
