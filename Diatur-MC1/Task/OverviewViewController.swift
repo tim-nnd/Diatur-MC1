@@ -15,22 +15,17 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var todayListTitle: UILabel!
     
     @IBOutlet weak var labelWorkHour: UILabel!
+    @IBOutlet weak var workingLIfe: UILabel!
+    @IBOutlet weak var workLabel: UILabel!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var lifeLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     var cellID = "listCell"
     var labelWorkHourText = 0
-    var sorted: [Task] = []
+    var ListViewSorted: [Task] = []
     
     var inputDariFirstTime = 8
-    
-        
-    // Reference dari Task.Swift
-    var arrayTask: [Task] = [
-        
-        Task.init(name: "Ngoding Dulu", priority: 0),
-        Task.init(name: "Ahayy Ngoding", priority: 2),
-        Task.init(name: "Lagi MC1.2 Brooow", priority: 1),
-        Task.init(name: "LAGI UTS NICH", priority: 1)
-    ]
     
     var testingBaru = "Test Coding bareng Azka"
     
@@ -54,6 +49,115 @@ class OverviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        workingLIfe.isHidden = true
+        lifeLabel.isHidden = true
+        
+        ListTask.delegate = self
+        ListTask.dataSource = self
+        
+        makeWorkCircle()
+        
+        arraySort()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        arraySort()
+        ListTask.reloadData()
+        
+    }
+    
+    @IBAction func userSwipeKanan(_ sender: UISwipeGestureRecognizer) {
+        print("userKanan")
+        
+        workingLIfe.isHidden = true
+        lifeLabel.isHidden = true
+        hoursLabel.isHidden = false
+        workLabel.isHidden = false
+        labelWorkHour.isHidden = false
+        
+        pageControl.currentPage = 0
+        makeWorkCircle()
+        
+        
+    }
+    
+    @IBAction func userSwipeLeft(_ sender: UISwipeGestureRecognizer) {
+        
+        print("userKiri")
+        
+        
+        workingLIfe.isHidden = false
+        lifeLabel.isHidden = false
+        hoursLabel.isHidden = true
+        workLabel.isHidden = true
+        labelWorkHour.isHidden = true
+        
+        
+        pageControl.currentPage = 1
+        
+        
+        makeLifeCircle()
+        lifeCircleAnimation()
+        
+    }
+    
+    // Testing purposes
+    @IBAction func userTap(_ sender: UIGestureRecognizer) {
+        print("userTap")
+        workCircleAnimation()
+        
+    }
+    
+    
+    @IBAction func addTask(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "addToAdd", sender: self)
+        
+    }
+    
+    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+        
+        
+    }
+    
+    func makeLifeCircle(){
+        
+        let centre = CGPoint(x: circleView.frame.width/2, y: circleView.frame.height/2)
+        
+        let circlePath = UIBezierPath(arcCenter: centre , radius: 100, startAngle:  -CGFloat.pi / 2, endAngle: 1.5*CGFloat.pi, clockwise: true)
+        
+        
+        // Stroke yang jadi "jalur"nya
+        strokeCircle.path = circlePath.cgPath
+        
+        
+        strokeCircle.fillColor = UIColor.clear.cgColor
+        strokeCircle.strokeColor = #colorLiteral(red: 0.9999175668, green: 0.9804440141, blue: 0.839117527, alpha: 1)
+        
+        strokeCircle.lineWidth = 28
+        
+        circleView.layer.addSublayer(strokeCircle)
+        
+        //Stroke Fill
+        
+        circle.path = circlePath.cgPath
+        
+        circle.fillColor = UIColor.clear.cgColor
+        circle.strokeColor = #colorLiteral(red: 0.9175909162, green: 0.8157240748, blue: 0.08633806556, alpha: 1)
+        circleView.layer.addSublayer(circle)
+        
+        circle.lineWidth = 28
+        circle.strokeEnd = 0
+        
+        circle.lineCap = .round
+        
+        
+    }
+    func makeWorkCircle(){
         
         let centre = CGPoint(x: circleView.frame.width/2, y: circleView.frame.height/2)
         
@@ -85,18 +189,26 @@ class OverviewViewController: UIViewController {
         circle.lineCap = .round
         
         
-        ListTask.delegate = self
-        ListTask.dataSource = self
+    }
+    
+    func lifeCircleAnimation(){
         
-        // Sort array
-        sorted = arrayTask.sorted(by: {$0.priority < $1.priority})
+        let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
         
+        // Fillnya nambah, gak dari 0 lagi
+        animateCircle.toValue = 1
+        animateCircle.fromValue = 0
+        
+        animateCircle.duration = 10
+        
+        circle.strokeEnd = 1
+        
+        circle.add(animateCircle, forKey: "Bebas")
         
     }
     
-    // Testing purposes
-    @IBAction func userTap(_ sender: UIGestureRecognizer) {
-        print("userTap")
+    func workCircleAnimation(){
+        
         var fromValues = position
         
         let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
@@ -107,10 +219,10 @@ class OverviewViewController: UIViewController {
         
         labelWorkHour.text = "\(labelWorkHourText)/\(inputDariFirstTime)"
         
-       
+        
         animateCircle.fromValue = fromValues
         animateCircle.toValue = position
-       
+        
         
         // Masalah Bug disini
         //circle.strokeEnd = CGFloat(position)
@@ -120,18 +232,20 @@ class OverviewViewController: UIViewController {
         circle.strokeEnd = CGFloat(position)
         
         circle.add(animateCircle, forKey: "Bebas")
-        
-       }
-
-
-    @IBAction func addTask(_ sender: UIButton) {
-        
-        performSegue(withIdentifier: "addToAdd", sender: self)
-        
     }
     
-    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+    func arraySort(){
+        // Get filtered array
+        var filteredData: [Task] = []
         
+        for task in TaskDatabase.taskArray {
+            if Calendar.current.compare(task.date, to: Date(), toGranularity: .day) == .orderedSame && !task.isCompleted {
+                filteredData.append(task)
+            }
+        }
+        
+        // Sort array
+        ListViewSorted = filteredData.sorted(by: {$0.priority < $1.priority})
         
     }
     /*
@@ -152,7 +266,7 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return sorted.count
+        return ListViewSorted.count
     }
     
     
@@ -160,7 +274,8 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         
         let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailedTaskTableViewCell
         
-        let dataDummy = sorted[indexPath.row]
+        let dataDummy = ListViewSorted[indexPath.row]
+        
         
         
         switch dataDummy.priority {
@@ -185,22 +300,58 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
+        
+        
+        cell.titleLabel = ListViewSorted[indexPath.row].name
+        cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
+        
+        ListTask.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(cell, animated: true)
+    }
+    
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let counts = TaskDatabase.taskArray.count
+        
         
         let deleteButtonAction = UIContextualAction(style: .destructive, title: "", handler: { (action, deleteView, onComplete) in
             
-            self.sorted.remove(at: indexPath.row)
+            // Delete Selected Index
+            var indexDelete = 0
+            
+            for x in 0 ... (counts - 1) {
+                
+                if TaskDatabase.taskArray[x].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[x].priority == self.ListViewSorted[indexPath.row].priority{
+                    
+                    
+                    indexDelete = x
+                    print(indexDelete, x)
+                    
+                }
+            }
+            
+            
+            TaskDatabase.taskArray.remove(at: indexDelete)
+            
+            self.arraySort()
             
             self.ListTask.deleteRows(at: [indexPath], with: .left)
             self.ListTask.reloadData()
             print("Delete")
-
+            
         })
         
         deleteButtonAction.image = deleteImage
         
         let editButtonAction = UIContextualAction(style: .normal, title: "", handler: { (actions, editView, onComplete) in
             print("edit")
+            
+            self.performSegue(withIdentifier: "editTask", sender: self)
         })
         
         editButtonAction.image = UIImage(systemName: "pencil")
@@ -211,7 +362,20 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         return config
         
         
+        
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editTask"{
+            let destinationVC = segue.destination as! NewTaskVC
+            destinationVC.parameterEdit = 1
+        }
+        
+        
+        
+    }
+    
+    
     
 }
 

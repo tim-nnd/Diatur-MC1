@@ -29,6 +29,9 @@ class SettingVC: UIViewController {
     }
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: Any){
+        
+      
+        
         if segue.identifier == "settingDetailWork" {
             if let vc = storyboard?.instantiateViewController(withIdentifier : "settingDetailWork") as? SettingDetailViewController {
                 navigationController?.pushViewController(vc, animated : true)
@@ -39,6 +42,8 @@ class SettingVC: UIViewController {
                 navigationController?.pushViewController(vc, animated : true)
             }
         }
+        
+        
     }
     
 }
@@ -61,33 +66,32 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
         
         cell.textLabel?.text = setting
         cell.imageView?.image = UIImage(systemName: settingImage)
-    
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
+        
+        settingList.deselectRow(at: indexPath, animated: true)
+        
         switch indexPath.row {
         case 0:
-            //performSegue(withIdentifier: "settingDetailWork", sender: self)
             if let vc = self.storyboard?.instantiateViewController(withIdentifier : "settingDetailWork") as? SettingDetailViewController {
-                self.navigationController?.pushViewController(vc, animated : true)
-            }
-
-            break;
-        case 1:
-            //performSegue(withIdentifier: "firstSetupBreak", sender: self)
-            if let vc = self.storyboard?.instantiateViewController(withIdentifier : "firstSetupBreak") as? SettingDetailBreakViewController {
-                self.navigationController?.pushViewController(vc, animated : true)
+                
+                present(vc, animated: true, completion: nil)
+                
             }
             
-            break;
+        case 1:
+            
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier : "firstSetupBreak") as? SettingDetailBreakViewController {
+                present(vc, animated: true, completion: nil)
+                
+            }
+            
         default:
             break;
         }
     }
-    
-    
-    
 }
-    
+

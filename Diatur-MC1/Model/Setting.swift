@@ -9,8 +9,8 @@ import Foundation
 
 struct Setting {
     
-    var workHour: Int
+    static var workHour: Int = 8
     
-    var breakMinute: Int
-    var workMinute: Int
+    static var breakMinute: Int = 5
+    static var workMinute: Int = 25
 }
