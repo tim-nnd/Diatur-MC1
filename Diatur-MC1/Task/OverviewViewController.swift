@@ -371,7 +371,9 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
             destinationVC.parameterEdit = 1
         }
         
-        
+        if let destinationVC = segue.destination as? NewTaskVC {
+            destinationVC.delegate = self
+        }
         
     }
     
@@ -379,5 +381,10 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
 }
 
-
+extension OverviewViewController: NewTaskDelegate {
+    func taskAdded() {
+        arraySort()
+        ListTask.reloadData()
+    }
+}
 

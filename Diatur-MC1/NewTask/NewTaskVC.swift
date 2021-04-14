@@ -9,6 +9,8 @@ import UIKit
 
 class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var delegate: NewTaskDelegate?
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var taskName: UITextField!
     @IBOutlet weak var priority: UIPickerView!
@@ -18,6 +20,11 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     var pickerData: [String] = ["High", "Medium", "Low"]
     
     var parameterEdit: Int = 0
+    
+    var taskNameData = ""
+    var priorityData = 0
+    var dateData = Date()
+    var noteData = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +60,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    
+        priorityData = row
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -70,12 +77,14 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     }
     
     @IBAction func datePickerChanged(_ sender: Any) {
-        let dateFormatter = DateFormatter()
+//        let dateFormatter = DateFormatter()
+//
+//        dateFormatter.dateStyle = DateFormatter.Style.long
+//        dateFormatter.dateFormat = "yyyy-MM-dd"
+//
+//        _ = dateFormatter.string(from: datePicker.date)
         
-        dateFormatter.dateStyle = DateFormatter.Style.long
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        _ = dateFormatter.string(from: datePicker.date)
+        dateData = datePicker.date
     }
     
     func editData() {
@@ -97,6 +106,16 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         navBar.title = "Edit"
     }
     
+    @IBAction func savePressed(_ sender: UIBarButtonItem) {
+        taskNameData = taskName.text ?? "Untitled Task"
+        noteData = note.text
+        
+        TaskDatabase.taskArray.append(Task(name: taskNameData, priority: priorityData, date: dateData, notes: noteData))
+        
+        delegate?.taskAdded()
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

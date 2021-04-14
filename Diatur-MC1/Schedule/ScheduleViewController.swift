@@ -156,3 +156,10 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         return config
     }
 }
+
+extension ScheduleViewController: NewTaskDelegate {
+    func taskAdded() {
+        getSortedData()
+        self.taskList.reloadData()
+    }
+}
