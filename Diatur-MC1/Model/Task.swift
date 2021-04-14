@@ -15,12 +15,20 @@ class Task {
     var notes: String
     var isCompleted: Bool
     
-    init(name: String, priority: Int, date: Date,  notes: String) {
+    init(name: String, priority: Int, date: Date, notes: String) {
         self.name = name
         self.priority = priority
         self.date = date
         self.notes = notes
         self.isCompleted = false
+    }
+    
+    init(name: String, priority: Int, date: Date, notes: String, isCompleted: Bool) {
+        self.name = name
+        self.priority = priority
+        self.date = date
+        self.notes = notes
+        self.isCompleted = isCompleted
     }
     
     //Init Overview
