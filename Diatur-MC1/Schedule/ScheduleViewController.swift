@@ -14,6 +14,8 @@ class ScheduleViewController: UIViewController {
     
     var sortedData: [Task] = []
     
+    var taskToBeEdited: Task?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +39,21 @@ class ScheduleViewController: UIViewController {
     }
     
     @objc func addTapped(){
-        print("userTap")
+        
+        performSegue(withIdentifier: "toAdd", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? NewTaskVC {
+            destinationVC.delegate = self
+        }
+        
+        if segue.identifier == "editTask"{
+            let destinationVC = segue.destination as! NewTaskVC
+            destinationVC.parameterEdit = 1
+            destinationVC.taskToBeEdited = self.taskToBeEdited
+        }
     }
     
     /*
@@ -150,6 +166,13 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         
         let editButtonAction = UIContextualAction(style: .normal, title: "", handler: {(actions, editView, onComplete) in
             
+            for n in 0...(TaskDatabase.taskArray.count-1) {
+                if TaskDatabase.taskArray[n].name == self.sortedData[indexPath.row].name && TaskDatabase.taskArray[n].priority == self.sortedData[indexPath.row].priority {
+                    self.taskToBeEdited = TaskDatabase.taskArray[n]
+                }
+            }
+            
+            self.performSegue(withIdentifier: "editTask", sender: self)
         })
         
         editButtonAction.image = UIImage(systemName: "pencil")
@@ -158,5 +181,12 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         
         config.performsFirstActionWithFullSwipe = true
         return config
+    }
+}
+
+extension ScheduleViewController: NewTaskDelegate {
+    func taskAdded() {
+        getSortedData()
+        self.taskList.reloadData()
     }
 }

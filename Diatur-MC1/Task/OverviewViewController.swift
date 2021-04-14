@@ -24,8 +24,13 @@ class OverviewViewController: UIViewController {
     var cellID = "listCell"
     var labelWorkHourText = 0
     
+    
     var ListViewSorted: [Task] = []
-   
+    
+    
+    var taskToBeEdited: Task?
+    
+    
     var inputDariFirstTime = 8
     var tableViewParameters: Bool = false
     
@@ -51,7 +56,7 @@ class OverviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        
         
         workingLIfe.isHidden = true
         lifeLabel.isHidden = true
@@ -112,7 +117,7 @@ class OverviewViewController: UIViewController {
         ListTask.isUserInteractionEnabled = false
         ListTask.reloadData()
         
-   }
+    }
     
     // Testing purposes
     @IBAction func userTap(_ sender: UIGestureRecognizer) {
@@ -219,7 +224,7 @@ class OverviewViewController: UIViewController {
     
     func workCircleAnimation(){
         
-        var fromValues = position
+        let fromValues = position
         
         let animateCircle = CABasicAnimation(keyPath: "strokeEnd")
         
@@ -274,41 +279,41 @@ class OverviewViewController: UIViewController {
 
 extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
     
-
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-          
-            if tableViewParameters{
-                
-                return TipsnTrick.TipsArray.count
-            }
-            else{
-               
-               return ListViewSorted.count
-            }
-       }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if tableViewParameters{
+            
+            return TipsnTrick.TipsArray.count
+        }
+        else{
+            
+            return ListViewSorted.count
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           
-            if tableViewParameters{
-                let cells = ListTask.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! DetailedTaskTableViewCell
-                
-                //
-                cells.taskName.text = TipsnTrick.TipsArray[indexPath.row]
-              
-                cells.priorityColor.tintColor = .white
-                cells.priorityLabel.text = ""
-                
-                cells.accessoryType = .none
-                
-                return cells
-            }
-            else{
-                
+        if tableViewParameters{
+            let cells = ListTask.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! DetailedTaskTableViewCell
+            
+            //
+            cells.taskName.text = TipsnTrick.TipsArray[indexPath.row]
+            
+            cells.priorityColor.tintColor = .white
+            cells.priorityLabel.text = ""
+            
+            cells.accessoryType = .none
+            
+            return cells
+        }
+        else{
+            
             let cell = ListTask.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailedTaskTableViewCell
-                
+            
             let dataDummy = ListViewSorted[indexPath.row]
-           
+            
             switch dataDummy.priority {
             case 0:
                 priorityLabel = "High"
@@ -329,91 +334,106 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
             
             
             return cell
-                
-            }
             
         }
-        
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-            let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
-            
-            
-            cell.titleLabel = ListViewSorted[indexPath.row].name
-            cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
-            
-            
-            ListTask.deselectRow(at: indexPath, animated: true)
-            
-            navigationController?.pushViewController(cell, animated: true)
-        }
-        
-        
-        func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            
-            let counts = TaskDatabase.taskArray.count
-            
-            
-            let deleteButtonAction = UIContextualAction(style: .destructive, title: "", handler: { (action, deleteView, onComplete) in
-                
-                // Delete Selected Index
-                var indexDelete = 0
-                
-                for x in 0 ... (counts - 1) {
-                    
-                    if TaskDatabase.taskArray[x].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[x].priority == self.ListViewSorted[indexPath.row].priority{
-                        
-                        
-                        indexDelete = x
-                        print(indexDelete, x)
-                        
-                    }
-                }
-                
-                
-                TaskDatabase.taskArray.remove(at: indexDelete)
-                
-                self.arraySort()
-                
-                self.ListTask.deleteRows(at: [indexPath], with: .left)
-                self.ListTask.reloadData()
-                print("Delete")
-                
-            })
-            
-            deleteButtonAction.image = deleteImage
-            
-            let editButtonAction = UIContextualAction(style: .normal, title: "", handler: { (actions, editView, onComplete) in
-                print("edit")
-                
-                self.performSegue(withIdentifier: "editTask", sender: self)
-            })
-            
-            editButtonAction.image = UIImage(systemName: "pencil")
-            
-            let config = UISwipeActionsConfiguration(actions: [deleteButtonAction, editButtonAction])
-            
-            config.performsFirstActionWithFullSwipe = true
-            return config
-            
-            
-            
-        }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "editTask"{
-            let destinationVC = segue.destination as! NewTaskVC
-            destinationVC.parameterEdit = 1
-        }
-        
-        
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
+        
+        
+        cell.titleLabel = ListViewSorted[indexPath.row].name
+        cell.prorityLabelIndicator = ListViewSorted[indexPath.row].priority
+        
+        
+        ListTask.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(cell, animated: true)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let counts = TaskDatabase.taskArray.count
+        
+        
+        let deleteButtonAction = UIContextualAction(style: .destructive, title: "", handler: { (action, deleteView, onComplete) in
+            
+            // Delete Selected Index
+            var indexDelete = 0
+            
+            for x in 0 ... (counts - 1) {
+                
+                if TaskDatabase.taskArray[x].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[x].priority == self.ListViewSorted[indexPath.row].priority{
+                    
+                    
+                    indexDelete = x
+                    print(indexDelete, x)
+                    
+                }
+            }
+            
+            
+            TaskDatabase.taskArray.remove(at: indexDelete)
+            
+            self.arraySort()
+            
+            self.ListTask.deleteRows(at: [indexPath], with: .left)
+            self.ListTask.reloadData()
+            print("Delete")
+            
+        })
+        
+        deleteButtonAction.image = deleteImage
+        
+        let editButtonAction = UIContextualAction(style: .normal, title: "", handler: { (actions, editView, onComplete) in
+            print("edit")
+            
+            for n in 0...(TaskDatabase.taskArray.count-1) {
+                if TaskDatabase.taskArray[n].name == self.ListViewSorted[indexPath.row].name && TaskDatabase.taskArray[n].priority == self.ListViewSorted[indexPath.row].priority {
+                    self.taskToBeEdited = TaskDatabase.taskArray[n]
+                }
+            }
+            
+            self.performSegue(withIdentifier: "editTask", sender: self)
+        })
+        
+        editButtonAction.image = UIImage(systemName: "pencil")
+        
+        let config = UISwipeActionsConfiguration(actions: [deleteButtonAction, editButtonAction])
+        
+        config.performsFirstActionWithFullSwipe = true
+        return config
     
     
 }
 
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    if segue.identifier == "editTask"{
+        let destinationVC = segue.destination as! NewTaskVC
+        destinationVC.parameterEdit = 1
+        destinationVC.taskToBeEdited = self.taskToBeEdited
+    }
+    
+    if let destinationVC = segue.destination as? NewTaskVC {
+        destinationVC.delegate = self
+    }
+    
+}
 
+
+
+}
+
+
+
+extension OverviewViewController: NewTaskDelegate {
+    func taskAdded() {
+        arraySort()
+        ListTask.reloadData()
+    }
+}
 
