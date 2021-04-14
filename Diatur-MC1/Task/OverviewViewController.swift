@@ -235,8 +235,17 @@ class OverviewViewController: UIViewController {
     }
     
     func arraySort(){
+        // Get filtered array
+        var filteredData: [Task] = []
+        
+        for task in TaskDatabase.taskArray {
+            if Calendar.current.compare(task.date, to: Date(), toGranularity: .day) == .orderedSame && !task.isCompleted {
+                filteredData.append(task)
+            }
+        }
+        
         // Sort array
-        ListViewSorted = TaskDatabase.taskArray.sorted(by: {$0.priority < $1.priority})
+        ListViewSorted = filteredData.sorted(by: {$0.priority < $1.priority})
         
     }
     /*
