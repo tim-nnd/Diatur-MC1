@@ -24,6 +24,7 @@ class FirstSetupViewController: UIViewController, UIPickerViewDataSource, UIPick
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return arrayDataWorkHour.count
     }
@@ -37,7 +38,9 @@ class FirstSetupViewController: UIViewController, UIPickerViewDataSource, UIPick
     }
 
     @IBAction func nextButton(_ sender: UIButton) {
+
         Setting.workHour = Int(arrayDataWorkHour[selectedRow]) ?? 8
         print(Setting.workHour)
+
     }
 }

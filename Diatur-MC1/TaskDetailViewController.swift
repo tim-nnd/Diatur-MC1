@@ -35,14 +35,8 @@ class TaskDetailViewController: UIViewController {
     @IBOutlet weak var timerTitle: UILabel!
     
     @IBOutlet weak var breakLabel: UILabel!
-
-    // Dapet Value dari Overview (Dummy)
-    
-//    var titleLabel: String = ""
-//    var prorityLabelIndicator: Int = 0
     
     var activeTask: Task?
-
     
     @IBOutlet weak var timer_Counter: UILabel!
     
@@ -336,16 +330,15 @@ class TaskDetailViewController: UIViewController {
      
      }*/
     
-    
     /*
+    
      func LabelChange(){
-     nameTask.text = "Ini nama Task"
-     priorityTask.text = "Medium Priority"
+     
      dateTask.text = "8 April 2021"
      notesTask.text = "Ini contoh cobain data dummy, belom pake data asli yang dari new task, INI TEST GANTI DOANG"
      }
-     */
-    
+     
+    */
     
     /*
      // MARK: - Navigation

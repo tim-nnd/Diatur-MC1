@@ -28,6 +28,7 @@
 		ABABB78A262012E00001993C /* SettingDetailBreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */; };
 		ABFBE675261ED61F00AF4E57 /* FirstSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */; };
 		ABFBE678261ED65300AF4E57 /* FirstSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */; };
+		C026C9242626D4BD0055586D /* TipsnTrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = C026C9232626D4BD0055586D /* TipsnTrick.swift */; };
 		C02E2C79261DCC83007A302A /* Ring.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C78261DCC83007A302A /* Ring.swift */; };
 		C02E2C7D261DD23B007A302A /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02E2C7C261DD23B007A302A /* Setting.swift */; };
 		C065B7422620A22E004A9121 /* TestingGithubGakStashedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C065B7412620A22E004A9121 /* TestingGithubGakStashedViewController.swift */; };
@@ -67,6 +68,7 @@
 		ABABB789262012E00001993C /* SettingDetailBreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailBreakViewController.swift; sourceTree = "<group>"; };
 		ABFBE674261ED61F00AF4E57 /* FirstSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstSetup.storyboard; sourceTree = "<group>"; };
 		ABFBE677261ED65300AF4E57 /* FirstSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSetupViewController.swift; sourceTree = "<group>"; };
+		C026C9232626D4BD0055586D /* TipsnTrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsnTrick.swift; sourceTree = "<group>"; };
 		C02E2C78261DCC83007A302A /* Ring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ring.swift; sourceTree = "<group>"; };
 		C02E2C7C261DD23B007A302A /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		C065B7412620A22E004A9121 /* TestingGithubGakStashedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingGithubGakStashedViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				1C7B610826248C6D009B59ED /* TaskData.swift */,
 				1C0737B92625633800106E39 /* RingData.swift */,
+				C026C9232626D4BD0055586D /* TipsnTrick.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C026C9242626D4BD0055586D /* TipsnTrick.swift in Sources */,
 				E089483626208F5E0039B7E5 /* ViewController.swift in Sources */,
 				E08948412620970F0039B7E5 /* DetailedTaskTableViewCell.swift in Sources */,
 				1C0C14A4261DCA3800B0EDCC /* Task.swift in Sources */,
