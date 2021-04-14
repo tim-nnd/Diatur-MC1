@@ -32,6 +32,10 @@ class ScheduleViewController: UIViewController {
         self.taskList.reloadData()
     }
     
+    @IBAction func addButtonTouch(_ sender: UIButton) {
+        
+    }
+    
     /*
      buat ambil data yg udh kesort dan udh kefilter dari database
      data yg di database ga kesort dan ga kefilter hari
@@ -98,6 +102,18 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
+        
+        cell.titleLabel = sortedData[indexPath.row].name
+        cell.prorityLabelIndicator = sortedData[indexPath.row].priority
+        
+        taskList.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(cell, animated: true)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

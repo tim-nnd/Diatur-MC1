@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WPT-uR-Ogf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XQE-f2-OHH">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Schedule-->
+        <!--Schedule View Controller-->
         <scene sceneID="QEU-7V-XEN">
             <objects>
                 <viewController storyboardIdentifier="schedule" id="WPT-uR-Ogf" customClass="ScheduleViewController" customModule="Diatur_MC1" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,6 +26,10 @@
                                                 <rect key="frame" x="282" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Add"/>
+                                                <connections>
+                                                    <action selector="addButtonTouch:" destination="WPT-uR-Ogf" eventType="touchUpInside" id="w8B-j7-eJc"/>
+                                                    <segue destination="Ugp-6t-niA" kind="presentation" identifier="toAdd" id="fv9-MG-Of5"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -101,13 +105,48 @@
                         <viewLayoutGuide key="safeArea" id="13i-mx-PDc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" id="W5U-Ve-aWj"/>
+                    <navigationItem key="navigationItem" id="nLw-Ix-tue"/>
                     <connections>
                         <outlet property="datePicker" destination="U9R-wu-dQx" id="qIT-rn-Dl7"/>
                         <outlet property="taskList" destination="zx8-Pp-cZi" id="5Tb-cq-YxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibd-wI-klr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870.7692307692307" y="80.33175355450237"/>
+        </scene>
+        <!--NewTask-->
+        <scene sceneID="GUK-ah-diV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewTask" id="Ugp-6t-niA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QqQ-el-sUQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2516.9230769230767" y="-75.355450236966817"/>
+        </scene>
+        <!--TaskDetail-->
+        <scene sceneID="hBc-0r-jjI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TaskDetail" id="1zp-Tu-dB1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0I0-cD-PiA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2512.3076923076924" y="139.33649289099526"/>
+        </scene>
+        <!--Schedule-->
+        <scene sceneID="1xS-BY-3gH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XQE-f2-OHH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedule" image="calendar" catalog="system" id="W5U-Ve-aWj"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="seB-C0-kiX">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WPT-uR-Ogf" kind="relationship" relationship="rootViewController" id="vGY-LZ-7fx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9j-fP-5RJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="941.53846153846155" y="80.33175355450237"/>
         </scene>
