@@ -32,19 +32,33 @@ class ScheduleViewController: UIViewController {
         self.taskList.reloadData()
     }
     
+    @IBAction func addButtonTouch(_ sender: UIButton) {
+        
+    }
+    
     /*
      buat ambil data yg udh kesort dan udh kefilter dari database
      data yg di database ga kesort dan ga kefilter hari
      (logic filter hari masih belom)
      */
     func getSortedData() {
-        sortedData = TaskDatabase.taskArray.sorted(by: {$0.priority < $1.priority})
+        var filteredData: [Task] = []
+        
+        for task in TaskDatabase.taskArray {
+            if Calendar.current.compare(task.date, to: datePicker.date, toGranularity: .day) == .orderedSame && !task.isCompleted {
+                filteredData.append(task)
+            }
+        }
+        
+        sortedData = filteredData.sorted(by: {$0.priority < $1.priority})
     }
     
     /*
      buat dapetin hari
      */
     @IBAction func datePickerChanged(_ sender: Any) {
+        getSortedData()
+        self.taskList.reloadData()
     }
     
     /*
@@ -90,6 +104,18 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = storyboard?.instantiateViewController(withIdentifier: "taskDetail") as! TaskDetailViewController
+        
+        cell.titleLabel = sortedData[indexPath.row].name
+        cell.prorityLabelIndicator = sortedData[indexPath.row].priority
+        
+        taskList.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(cell, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteButtonAction = UIContextualAction(style: .destructive, title: "", handler: {(action, deleteView, onComplete) in
@@ -112,7 +138,6 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             self.getSortedData()
             
 //            refresh tablenya
-            self.taskList.deleteRows(at: [indexPath], with: .left)
             self.taskList.reloadData()
             print("Del \(indexPath.row)")
         })
