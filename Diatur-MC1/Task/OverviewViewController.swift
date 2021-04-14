@@ -57,7 +57,6 @@ class OverviewViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
         workingLIfe.isHidden = true
         lifeLabel.isHidden = true
         
@@ -76,6 +75,7 @@ class OverviewViewController: UIViewController {
         
         arraySort()
         ListTask.reloadData()
+        labelWorkHourText = 0 
         
     }
     
@@ -94,6 +94,8 @@ class OverviewViewController: UIViewController {
         
         ListTask.isUserInteractionEnabled = true
         ListTask.reloadData()
+        
+        
         
     }
     
@@ -332,6 +334,7 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
             cell.taskName.text = dataDummy.name
             cell.priorityLabel.text = "Priority \(priorityLabel)"
             
+            cell.accessoryType = .disclosureIndicator
             
             return cell
             
@@ -406,26 +409,26 @@ extension OverviewViewController: UITableViewDelegate, UITableViewDataSource{
         
         config.performsFirstActionWithFullSwipe = true
         return config
-    
-    
-}
-
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-    if segue.identifier == "editTask"{
-        let destinationVC = segue.destination as! NewTaskVC
-        destinationVC.parameterEdit = 1
-        destinationVC.taskToBeEdited = self.taskToBeEdited
+        
+        
     }
     
-    if let destinationVC = segue.destination as? NewTaskVC {
-        destinationVC.delegate = self
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "editTask"{
+            let destinationVC = segue.destination as! NewTaskVC
+            destinationVC.parameterEdit = 1
+            destinationVC.taskToBeEdited = self.taskToBeEdited
+        }
+        
+        if let destinationVC = segue.destination as? NewTaskVC {
+            destinationVC.delegate = self
+        }
+        
     }
     
-}
-
-
-
+    
+    
 }
 
 

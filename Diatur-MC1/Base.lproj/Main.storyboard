@@ -265,7 +265,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="taskDetail" storyboardName="TaskDetail" id="dpb-Sw-o39" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rKC-nw-lI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3392" y="171"/>
+            <point key="canvasLocation" x="3392" y="144"/>
         </scene>
         <!--Scroll View Testing View Controller-->
         <scene sceneID="WJX-o9-icp">
