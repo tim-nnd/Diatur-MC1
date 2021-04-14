@@ -102,20 +102,20 @@
         <!--settingDetailWork-->
         <scene sceneID="hco-Zw-iCK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hPU-kN-b8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="settingDetailWork" storyboardName="SettingDetail" referencedIdentifier="settingDetailWork" id="p18-bv-PMt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hxf-sL-Jcd"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hPU-kN-b8Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="535" y="8"/>
         </scene>
         <!--firstSetupBreak-->
         <scene sceneID="4bi-VT-5dW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UkK-If-r1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="firstSetupBreak" storyboardName="SettingDetail" referencedIdentifier="firstSetupBreak" id="pLr-AB-9vr" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="nLh-gJ-jbF"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UkK-If-r1K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="640" y="89"/>
         </scene>

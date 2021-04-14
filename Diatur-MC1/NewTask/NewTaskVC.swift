@@ -24,7 +24,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         self.priority.dataSource = self
         
         /* Call this to edit the task */
-        // editData()
+        editData()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -68,7 +68,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
     func editData() {
         let noteData = "Some some some Note"
         let taskNameData = "Task A"
-        let priorityData = 2
+        let priorityData = 1
         let dateData = "2021-04-20"
         
         let dateFormatter = DateFormatter()
@@ -77,7 +77,7 @@ class NewTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource 
         
         note.text = noteData
         taskName.text = taskNameData
-        priority.selectRow(priorityData, inComponent: 1, animated: true)
+        priority.selectRow(priorityData, inComponent: 0, animated: true)
         datePicker.date = dateObj!
         navBar.title = "Edit"
     }
