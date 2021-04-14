@@ -21,3 +21,5 @@ struct TaskDatabase {
         Task(name: "LAGI UTS NICH", priority: 1)
     ]
 }
+
+
